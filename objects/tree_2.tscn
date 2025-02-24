@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=3 uid="uid://cj7xxw3eq0wdg"]
+
+[ext_resource type="TileSet" uid="uid://4wguoepu3bil" path="res://sprites/tile_terra.tres" id="1_4w8hu"]
+[ext_resource type="Texture2D" uid="uid://cgyrs53s4agib" path="res://sprites/LargeShadow.png" id="1_hccci"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_nxddb"]
+radius = 10.3588
+height = 48.2603
+
+[node name="tree_2" type="StaticBody2D"]
+collision_layer = 3
+collision_mask = 0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(10.1604, -14.0466)
+scale = Vector2(2.3198, 1.86153)
+texture = ExtResource("1_hccci")
+
+[node name="TileMap2" type="TileMap" parent="."]
+texture_filter = 1
+tile_set = ExtResource("1_4w8hu")
+format = 2
+layer_0/tile_data = PackedInt32Array(-262145, 131072, 10, -196609, 131072, 11, -131073, 131072, 12, -65537, 131072, 13, -1, 131072, 14, -327680, 196608, 10, -262144, 196608, 11, -196608, 196608, 12, -131072, 196608, 13, -65536, 196608, 14, -327679, 262144, 10, -262143, 262144, 11, -196607, 262144, 12, -131071, 786432, 13, -65535, 262144, 14, -262147, 0, 10, -196611, 0, 11, -262146, 65536, 10, -196610, 65536, 11, -131074, 65536, 12, -2, 65536, 14, -327681, 131072, 9, -393216, 196608, 9, -393215, 262144, 9)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-2.85125, -9.33755)
+rotation = -1.55478
+shape = SubResource("CapsuleShape2D_nxddb")
