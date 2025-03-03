@@ -4,6 +4,7 @@ class_name Player
 @export var acceleration = 400
 @export var deceleration = 600
 
+@onready var camera = $PlayerCamera  # Узел Camera2D
 var our_body
 var damage_is_taked = false
 
@@ -23,7 +24,6 @@ func player_animations(direction: Vector2):
 			animation.set_animation("stage")
 		else:
 			animation.set_animation("run_down")
-			
 	elif direction == Vector2(-1, 0):
 		animation.play("atack")
 		animation.flip_h = true
@@ -57,13 +57,7 @@ func _physics_process(delta):
 	get_input()
 	move_and_slide()
 
-	# Keep the character within the screen boundaries
-	var screen_size = get_viewport().size
-	position.x = clamp(position.x, 0, screen_size.x)
-	position.y = clamp(position.y, 0, screen_size.y)
-
 func _on_player_hit_box_body_entered(body):
-	
 	$"../CharacterBody2D/Label2".text = str(body)
 	our_body = body
 	

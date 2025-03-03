@@ -1,0 +1,7 @@
+res://objects/creature/Character.tscn
+res://sprites/tile_terra.tres
+res://sprites/tile_set_base.tres
+res://scenes/menu.tscn
+res://scenes/levels/bossfight1.tscn
+res://scenes/levels/Test/test.tscn
+res://objects/structure/Tower.tscn

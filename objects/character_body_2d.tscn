@@ -343,6 +343,8 @@ collision_layer = 2
 collision_mask = 2
 script = ExtResource("1_q0kba")
 
+[node name="Camera2D" type="Camera2D" parent="."]
+
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
 position = Vector2(-0.5, 12)

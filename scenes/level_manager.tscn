@@ -75,6 +75,13 @@ theme_override_fonts/font = ExtResource("2_dqx2y")
 theme_override_font_sizes/font_size = 24
 text = "level1"
 
+[node name="Button3" type="Button" parent="."]
+offset_left = 24.0
+offset_top = 77.0
+offset_right = 248.0
+offset_bottom = 110.0
+text = "test"
+
 [node name="Button2" type="Button" parent="."]
 offset_left = 24.0
 offset_top = 400.0
@@ -118,4 +125,5 @@ text = "Управляя перссонажем с помощью
 "
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Button3" to="." method="_on_button_3_pressed"]
 [connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]
