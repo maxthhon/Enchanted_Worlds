@@ -93,9 +93,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/maksimryzevskij/Documents/GitHub/Enchanted_Worlds/Zashita_sokrovish.csproj",
-      "projectName": "Zashita_sokrovish",
-      "projectPath": "/Users/maksimryzevskij/Documents/GitHub/Enchanted_Worlds/Zashita_sokrovish.csproj",
+      "projectUniqueName": "/Users/maksimryzevskij/Documents/GitHub/Enchanted_Worlds/EWd.csproj",
+      "projectName": "EWd",
+      "projectPath": "/Users/maksimryzevskij/Documents/GitHub/Enchanted_Worlds/EWd.csproj",
       "packagesPath": "/Users/maksimryzevskij/.nuget/packages/",
       "outputPath": "/Users/maksimryzevskij/Documents/GitHub/Enchanted_Worlds/.godot/mono/temp/obj/",
       "projectStyle": "PackageReference",

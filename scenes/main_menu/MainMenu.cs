@@ -10,7 +10,6 @@ public partial class MainMenu : Node2D
 	{
 		animationPlayer = GetNode<AnimatedSprite2D>("AnimatedSprite2D");
 		audioPlayer = GetNode<AudioStreamPlayer>("AudioStreamPlayer");
-		animationPlayer.Play("stage");
 	}
 
 	private void _on_button_2_pressed()
@@ -20,7 +19,7 @@ public partial class MainMenu : Node2D
 	
 	private void _on_button_pressed()
 	{
-		animationPlayer.Play("go");
+		animationPlayer.Play("walk_down");
 		GetNode<Timer>("play_timer").Start();
 	}
 
@@ -31,8 +30,7 @@ public partial class MainMenu : Node2D
 
 	private void _on_timer_timeout()
 	{
-		animationPlayer.Play("stage");
-		GetTree().ChangeSceneToFile("res://scenes/level_manager.tscn");
+		GetTree().ChangeSceneToFile("res://scenes/levels/Test/test.tscn");
 	}
 
 	private void _on_audio_stream_player_finished()
