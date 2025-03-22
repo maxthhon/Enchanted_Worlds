@@ -1,9 +1,9 @@
 [gd_scene load_steps=41 format=3 uid="uid://bv18l1ikjwrkq"]
 
-[ext_resource type="Script" path="res://objects/creature/Character/Character.cs" id="1_tjwax"]
+[ext_resource type="Script" uid="uid://cbfga7r31wlx7" path="res://objects/creature/Character/Character.cs" id="1_tjwax"]
 [ext_resource type="Texture2D" uid="uid://dvrli4pesltwh" path="res://sprites/MediumShadow.png" id="2_r3fav"]
 [ext_resource type="Texture2D" uid="uid://be4ktfbrm3f3l" path="res://sprites/new_sprites/fox-Sheet.png" id="3_3wt6s"]
-[ext_resource type="Script" path="res://objects/creature/Character/CharAnimation.cs" id="4_kayir"]
+[ext_resource type="Script" uid="uid://ypmctsp4apk4" path="res://objects/creature/Character/CharAnimation.cs" id="4_kayir"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0d787"]
 atlas = ExtResource("3_3wt6s")
@@ -309,4 +309,5 @@ wait_time = 0.338
 
 [connection signal="input_event" from="." to="." method="_on_input_event"]
 [connection signal="body_entered" from="PlayerHitBox" to="." method="_on_player_hit_box_body_entered"]
+[connection signal="body_exited" from="PlayerHitBox" to="." method="_on_player_hit_box_body_exited"]
 [connection signal="timeout" from="headdown" to="." method="_on_headdown_timeout"]

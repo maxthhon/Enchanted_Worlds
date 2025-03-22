@@ -1,5 +1,5 @@
 fc8a56933c4b1c8d796fdb8f7a9f9475
-::res://::1741603571
+::res://::1742392564
 export_presets.cfg::TextFile::-1::1740380275::0::1::::<><>::
 icon.svg::CompressedTexture2D::955563216181251218::1720672754::1741190623::1::::<><>::
 README.md::TextFile::-1::1740394427::0::1::::<><>::
@@ -8,33 +8,40 @@ pixelcyr_normal.ttf::FontFile::2789893722202507613::1720672764::1741190623::1:::
 ::res://objects/::1741189832
 ::res://objects/creature/::1741383510
 BaseEnemy.cs::CSharpScript::-1::1741383510::0::1::::<>CharacterBody2D<>::
-::res://objects/creature/Character/::1741605411
-Character.cs::CSharpScript::-1::1741550720::0::1::::<>CharacterBody2D<>::
-Character.tscn::PackedScene::3916084904624387496::1741605411::0::1::::<><>::res://objects/creature/Character/Character.cs<>uid://dvrli4pesltwh::::res://sprites/MediumShadow.png<>uid://be4ktfbrm3f3l::::res://sprites/new_sprites/fox-Sheet.png<>res://objects/creature/Character/CharAnimation.cs
+::res://objects/creature/Character/::1742391718
+Character.cs::CSharpScript::-1::1741900984::0::1::::<>CharacterBody2D<>::
+Character.tscn::PackedScene::3916084904624387496::1742391718::0::1::::<><>::res://objects/creature/Character/Character.cs<>uid://dvrli4pesltwh::::res://sprites/MediumShadow.png<>uid://be4ktfbrm3f3l::::res://sprites/new_sprites/fox-Sheet.png<>res://objects/creature/Character/CharAnimation.cs
 CharAnimation.cs::CSharpScript::-1::1741189868::0::1::::<>AnimatedSprite2D<>::
-::res://objects/creature/Slime/::1741605983
-Slime.cs::CSharpScript::-1::1741605983::0::1::::<>CharacterBody2D<>::
-Slime.tscn::PackedScene::4092482413703488863::1741605411::0::1::::<><>::res://objects/creature/Slime/Slime.cs<>uid://dvrli4pesltwh::::res://sprites/MediumShadow.png<>uid://c3222rgkfgkjq::::res://sprites/new_sprites/slime-Sheet.png<>uid://f7y0xc513lko::::res://sprites/new_sprites/healthBar_under.png<>uid://bb6my0c4qqhk6::::res://sprites/new_sprites/healthBar_progress.png
+::res://objects/creature/Slime/::1742391718
+Slime.cs::CSharpScript::-1::1741902616::0::1::::<>CharacterBody2D<>::
+Slime.tscn::PackedScene::4092482413703488863::1742391718::0::1::::<><>::res://objects/creature/Slime/Slime.cs<>uid://dvrli4pesltwh::::res://sprites/MediumShadow.png<>uid://c3222rgkfgkjq::::res://sprites/new_sprites/slime-Sheet.png<>uid://f7y0xc513lko::::res://sprites/new_sprites/healthBar_under.png<>uid://bb6my0c4qqhk6::::res://sprites/new_sprites/healthBar_progress.png
 SlimeAnimation.cs::CSharpScript::-1::1741190874::0::1::::<>AnimatedSprite2D<>::
-::res://objects/item/::1740396745
+::res://objects/item/::1742391718
+Candle.cs::CSharpScript::-1::1741900673::0::1::::<>Node2D<>::
+Candle.tscn::PackedScene::3962347409099763395::1742391718::0::1::::<><>::res://objects/item/Candle.cs<>uid://bq163eynbt0jd::::res://sprites/new_sprites/light.png<>uid://t7jsd8lnlutt::::res://sprites/new_sprites/candle-Sheet.png<>uid://dvrli4pesltwh::::res://sprites/MediumShadow.png
 ::res://objects/structure/::1741383239
-::res://objects/structure/Tower/::1741605411
-Tower.cs::CSharpScript::-1::1741548036::0::1::::<>StaticBody2D<>::
-Tower.tscn::PackedScene::2390790870186345853::1741605411::0::1::::<><>::res://objects/structure/Tower/Tower.cs<>uid://ckwmwmuoqgyld::::res://sprites/tile_set_base.tres<>uid://f7y0xc513lko::::res://sprites/new_sprites/healthBar_under.png<>uid://bb6my0c4qqhk6::::res://sprites/new_sprites/healthBar_progress.png
+::res://objects/structure/Tower/::1742391718
+Tower.cs::CSharpScript::-1::1741972930::0::1::::<>StaticBody2D<>::
+Tower.tscn::PackedScene::2390790870186345853::1742391718::0::1::::<><>::res://objects/structure/Tower/Tower.cs<>uid://ckwmwmuoqgyld::::res://sprites/tile_set_base.tres<>uid://f7y0xc513lko::::res://sprites/new_sprites/healthBar_under.png<>uid://bb6my0c4qqhk6::::res://sprites/new_sprites/healthBar_progress.png
 ::res://releases/::1740996173
 ::res://releases/OSX/::1740394204
 ::res://releases/Windows/::1740394210
-::res://scenes/::1741190773
+::res://scenes/::1742373389
 ::res://scenes/levels/::1741190601
-::res://scenes/levels/Test/::1741605983
+::res://scenes/levels/Test/::1742391718
 SlimeSpawner.cs::CSharpScript::-1::1741542723::0::1::::<>Node<>::
-Test.cs::CSharpScript::-1::1741195820::0::1::::<>Node2D<>::
-test.tscn::PackedScene::5288803453759593959::1741605983::0::1::::<><>::res://scenes/levels/Test/Test.cs<>uid://4wguoepu3bil::::res://sprites/tile_terra.tres<>uid://bv18l1ikjwrkq::::res://objects/creature/Character/Character.tscn<>uid://bacd8gv2afpld::::res://objects/structure/Tower/Tower.tscn<>uid://bykot8cr6cp88::::res://objects/creature/Slime/Slime.tscn<>uid://cdjeh8f3ek5mi::::res://sounds/free/New_adventure.wav<>res://scenes/levels/Test/SlimeSpawner.cs<>uid://kd5n1lh6hlfs::::res://sprites/SmallShadow.png
-::res://scenes/main_menu/::1741605411
-MainMenu.cs::CSharpScript::-1::1741551998::0::1::::<>Node2D<>::
-MainMenu.tscn::PackedScene::7106102513577384786::1741605411::0::1::::<><>::res://scenes/main_menu/MainMenu.cs<>uid://dwyk8e76au7nt::::res://sprites/menu_fon.png<>uid://be4ktfbrm3f3l::::res://sprites/new_sprites/fox-Sheet.png<>uid://bf0pe3farcj0h::::res://fonts/pixelcyr_normal.ttf<>uid://cd5i685dm7ysb::::res://sounds/free/Story_begins.wav
+Test.cs::CSharpScript::-1::1742375492::0::1::::<>Node2D<>::
+test.tscn::PackedScene::5288803453759593959::1742391718::0::1::::<><>::res://scenes/levels/Test/Test.cs<>uid://4wguoepu3bil::::res://sprites/tile_terra.tres<>uid://bv18l1ikjwrkq::::res://objects/creature/Character/Character.tscn<>uid://bacd8gv2afpld::::res://objects/structure/Tower/Tower.tscn<>uid://bwpnjvb7odx20::::res://objects/item/Candle.tscn<>uid://bykot8cr6cp88::::res://objects/creature/Slime/Slime.tscn<>uid://cdjeh8f3ek5mi::::res://sounds/free/New_adventure.wav<>res://scenes/levels/Test/SlimeSpawner.cs<>uid://bphop7lp6nsgf::::res://scenes/other/blackout.tscn
+::res://scenes/main_menu/::1742391718
+MainMenu.cs::CSharpScript::-1::1742376793::0::1::::<>Node2D<>::
+MainMenu.tscn::PackedScene::7106102513577384786::1742391718::0::1::::<><>::res://scenes/main_menu/MainMenu.cs<>uid://corhhpljt88nc::::res://sprites/libraryMenu.jpg<>uid://be4ktfbrm3f3l::::res://sprites/new_sprites/fox-Sheet.png<>uid://bf0pe3farcj0h::::res://fonts/pixelcyr_normal.ttf<>uid://cd5i685dm7ysb::::res://sounds/free/Story_begins.wav<>uid://bphop7lp6nsgf::::res://scenes/other/blackout.tscn
+Settings.cs::CSharpScript::-1::1742376960::0::1::::<>Node2D<>::
+Settings.tscn::PackedScene::6789724852339992740::1742391718::0::1::::<><>::res://scenes/main_menu/Settings.cs<>uid://c01thqaggw5ox::::res://sprites/new_sprites/settings.jpg<>uid://bf0pe3farcj0h::::res://fonts/pixelcyr_normal.ttf<>uid://bphop7lp6nsgf::::res://scenes/other/blackout.tscn
 ::res://scenes/map/::1740996173
 Map.tscn::PackedScene::455825776140032158::1740996173::0::1::::<><>::
+::res://scenes/other/::1742391718
+Blackout.cs::CSharpScript::-1::1742376772::0::1::::<>DirectionalLight2D<>::
+blackout.tscn::PackedScene::3454582505812852113::1742391718::0::1::::<><>::res://scenes/other/Blackout.cs
 ::res://sounds/::1741190623
 Story_begin.wav::AudioStreamWAV::3315865142518518363::1740337381::1741190623::1::::<><>::
 ::res://sounds/free/::1741190623
@@ -46,10 +53,11 @@ Story_begins.wav::AudioStreamWAV::5045882106243591653::1740339006::1741190623::1
 ::res://sounds/non_free/::1741190623
 default_music.wav::AudioStreamWAV::8287536232428850686::1720672760::1741190623::1::::<><>::
 menu_music.wav::AudioStreamWAV::5343523704211490594::1720672760::1741190623::1::::<><>::
-::res://sprites/::1741603847
+::res://sprites/::1742391676
 black.png::CompressedTexture2D::9092455591006512825::1720672762::1741190623::1::::<><>::
 Decorations.png::CompressedTexture2D::8263177462905940370::1720672762::1741190623::1::::<><>::
 LargeShadow.png::CompressedTexture2D::5244585448290775609::1720672762::1741190623::1::::<><>::
+libraryMenu.jpg::CompressedTexture2D::5791017924923116760::1741902026::1741902047::1::::<><>::
 MediumShadow.png::CompressedTexture2D::8669005909124140919::1720672762::1741190623::1::::<><>::
 menu_fon.png::CompressedTexture2D::8753628039276440013::1720672762::1741190623::1::::<><>::
 over.png::CompressedTexture2D::8698010976144745718::1720672762::1741190623::1::::<><>::
@@ -65,8 +73,8 @@ SmallShadow.png::CompressedTexture2D::709927677705975472::1720672762::1741190623
 studlol.png::CompressedTexture2D::6043519909793438571::1720672762::1741190623::1::::<><>::
 tile1.png::CompressedTexture2D::652098602656413086::1720672762::1741190623::1::::<><>::
 Tileset.png::CompressedTexture2D::2664509737925677291::1720672762::1741190623::1::::<><>::
-tile_set_base.tres::TileSet::5520914667568977609::1741603847::0::1::::<><>::uid://ddrrdhy3te01o::::res://sprites/TX Tileset Wall.png<>uid://c5dyx3tetfgwx::::res://sprites/TX Props.png
-tile_terra.tres::TileSet::2081293536142430623::1741603847::0::1::::<><>::uid://dpy0lclmqll3w::::res://sprites/Decorations.png<>uid://bd7yc6r3mpmnj::::res://sprites/Tileset.png
+tile_set_base.tres::TileSet::5520914667568977609::1742391675::0::1::::<><>::uid://ddrrdhy3te01o::::res://sprites/TX Tileset Wall.png<>uid://c5dyx3tetfgwx::::res://sprites/TX Props.png
+tile_terra.tres::TileSet::2081293536142430623::1742391676::0::1::::<><>::uid://dpy0lclmqll3w::::res://sprites/Decorations.png<>uid://bd7yc6r3mpmnj::::res://sprites/Tileset.png
 tower.png::CompressedTexture2D::9215719685912984591::1720672762::1741190623::1::::<><>::
 tree.png::CompressedTexture2D::5487307643699617850::1720672762::1741190623::1::::<><>::
 TX Props.png::CompressedTexture2D::6886199591087984947::1720672762::1741190623::1::::<><>::
@@ -75,11 +83,14 @@ TX Tileset Grass.png::CompressedTexture2D::5646619239303402881::1720672762::1741
 TX Tileset Stone Ground.png::CompressedTexture2D::6293512901811766649::1720672760::1741190623::1::::<><>::
 TX Tileset Wall.png::CompressedTexture2D::7405960956107687350::1720672762::1741190623::1::::<><>::
 under.png::CompressedTexture2D::4082897673718323682::1720672762::1741190623::1::::<><>::
-::res://sprites/new_sprites/::1741606300
+::res://sprites/new_sprites/::1741973767
+candle-Sheet.png::CompressedTexture2D::1400226923543928753::1741898713::1741898718::1::::<><>::
+candle.png::CompressedTexture2D::4388558985797410974::1741898532::1741898615::1::::<><>::
 fox-Sheet.png::CompressedTexture2D::2727684378075922391::1741170284::1741190623::1::::<><>::
 healthBar_progress.png::CompressedTexture2D::2521378018186909999::1741543887::1741543944::1::::<><>::
 healthBar_under.png::CompressedTexture2D::418507371519675470::1741543899::1741543944::1::::<><>::
 light.png::CompressedTexture2D::3565048480273750241::1741606300::1741606304::1::::<><>::
+settings.jpg::CompressedTexture2D::6582403244017595707::1741973764::1741973767::1::::<><>::
 slime-Sheet.png::CompressedTexture2D::6795555666477912106::1741186856::1741190623::1::::<><>::
 ::res://sprites/test_attack/::1741190623
 1.png::CompressedTexture2D::4427344985396054923::1720672764::1741190623::1::::<><>::

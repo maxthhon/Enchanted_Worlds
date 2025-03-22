@@ -1,5 +1,6 @@
 using Godot;
 using System;
+using System.Collections.Generic;
 
 public partial class Character : CharacterBody2D
 {
@@ -13,6 +14,8 @@ public partial class Character : CharacterBody2D
 	private Random random = new Random();
 	public float min_zoom = 2.0f;
 	public float max_zoom = 5.0f;
+	
+	private List<Slime> enemieList = new List<Slime>(); // Initialize the list
 
 	private static readonly Vector2 LEFT = new Vector2(-1, 0);
 	private static readonly Vector2 RIGHT = new Vector2(1, 0);
@@ -135,7 +138,7 @@ public partial class Character : CharacterBody2D
 		if (body is Slime)
 		{
 			slime = (Slime)body;
-			//GD.Print("Slime found through player_hit_box", slime);
+			enemieList.Add(slime);
 		}
 		else if (body is Tower)
 		{
@@ -144,12 +147,20 @@ public partial class Character : CharacterBody2D
 		}
 	}
 	
+	public void _on_player_hit_box_body_exited(Node2D body)
+	{
+		if (body is Slime)
+		{
+			slime = (Slime)body;
+			enemieList.Remove(slime);
+		}
+	}
+
 	private void Attack()
 	{
-		//GD.Print("Slime ", slime);
-		if (slime != null)
+		foreach (var enemie in enemieList)
 		{
-			slime.TakeDamage(2); // Наносим урон слайму
+			enemie.TakeDamage(2); // Наносим урон всем слаймам в списке
 		}
 	}
 }

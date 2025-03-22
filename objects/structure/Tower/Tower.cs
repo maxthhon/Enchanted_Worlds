@@ -23,6 +23,7 @@ public partial class Tower : StaticBody2D
 	public void Die()
 	{
 		IsAlive = false;
+		GetNode<Label>("demo").Visible = true;
 	}
 
 	public void TakeDamage(int amount)

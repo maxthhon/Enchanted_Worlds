@@ -1,14 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "XBSV+92lkQQ=",
+  "dgSpecHash": "RcDMjXE8C50=",
   "success": true,
   "projectFilePath": "/Users/maksimryzevskij/Documents/GitHub/Enchanted_Worlds/EWd.csproj",
   "expectedPackageFiles": [
-    "/Users/maksimryzevskij/.nuget/packages/godot.sourcegenerators/4.3.0/godot.sourcegenerators.4.3.0.nupkg.sha512",
-    "/Users/maksimryzevskij/.nuget/packages/godotsharp/4.3.0/godotsharp.4.3.0.nupkg.sha512",
-    "/Users/maksimryzevskij/.nuget/packages/godotsharpeditor/4.3.0/godotsharpeditor.4.3.0.nupkg.sha512",
-    "/Users/maksimryzevskij/.nuget/packages/microsoft.netcore.app.ref/6.0.36/microsoft.netcore.app.ref.6.0.36.nupkg.sha512",
-    "/Users/maksimryzevskij/.nuget/packages/microsoft.aspnetcore.app.ref/6.0.36/microsoft.aspnetcore.app.ref.6.0.36.nupkg.sha512"
+    "/Users/maksimryzevskij/.nuget/packages/godot.sourcegenerators/4.4.0/godot.sourcegenerators.4.4.0.nupkg.sha512",
+    "/Users/maksimryzevskij/.nuget/packages/godotsharp/4.4.0/godotsharp.4.4.0.nupkg.sha512",
+    "/Users/maksimryzevskij/.nuget/packages/godotsharpeditor/4.4.0/godotsharpeditor.4.4.0.nupkg.sha512"
   ],
   "logs": []
 }

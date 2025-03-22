@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=4 uid="uid://bacd8gv2afpld"]
 
-[ext_resource type="Script" path="res://objects/structure/Tower/Tower.cs" id="1_lpc6r"]
+[ext_resource type="Script" uid="uid://duk33if3dhojt" path="res://objects/structure/Tower/Tower.cs" id="1_lpc6r"]
 [ext_resource type="TileSet" uid="uid://ckwmwmuoqgyld" path="res://sprites/tile_set_base.tres" id="2_88lj6"]
 [ext_resource type="Texture2D" uid="uid://f7y0xc513lko" path="res://sprites/new_sprites/healthBar_under.png" id="3_66gfd"]
 [ext_resource type="Texture2D" uid="uid://bb6my0c4qqhk6" path="res://sprites/new_sprites/healthBar_progress.png" id="4_ufppo"]
@@ -86,5 +86,14 @@ texture_progress = ExtResource("4_ufppo")
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="."]
 occluder = SubResource("OccluderPolygon2D_j860s")
+
+[node name="demo" type="Label" parent="."]
+visible = false
+offset_left = -92.0
+offset_top = 73.0
+offset_right = 101.0
+offset_bottom = 96.0
+text = "Спасибо за игру в demo"
+horizontal_alignment = 1
 
 [connection signal="body_entered" from="Hitbox" to="." method="_on_hitbox_body_entered"]

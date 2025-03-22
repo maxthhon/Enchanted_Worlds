@@ -41,7 +41,12 @@ public partial class Slime : CharacterBody2D
 		var direction = (towerPosition - GlobalPosition - new Vector2(0, -30)).Normalized();
 		Velocity = direction * 40;
 		
-		if (!tower.isAlive()) {
+		if (!slimeRun)
+		{
+			Velocity = Velocity * -1;
+		}
+		
+		if (!tower.isAlive() && slimeRun) {
 			animation.Animation = "stage";
 			return;
 		}
@@ -58,6 +63,7 @@ public partial class Slime : CharacterBody2D
 		{
 			int damage = random.Next(5, 15);
 			tower.TakeDamage(damage); // Уменьшает здоровье башни на 10 единиц
+			slimeRun = false;
 		}
 	}
 	

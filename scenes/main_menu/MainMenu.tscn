@@ -1,10 +1,11 @@
-[gd_scene load_steps=15 format=3 uid="uid://c8iip8sd4vjru"]
+[gd_scene load_steps=16 format=3 uid="uid://c8iip8sd4vjru"]
 
-[ext_resource type="Script" path="res://scenes/main_menu/MainMenu.cs" id="1_yg43f"]
-[ext_resource type="Texture2D" uid="uid://dwyk8e76au7nt" path="res://sprites/menu_fon.png" id="2_mnhu7"]
+[ext_resource type="Script" uid="uid://dlh36dqcmnqtk" path="res://scenes/main_menu/MainMenu.cs" id="1_yg43f"]
+[ext_resource type="Texture2D" uid="uid://corhhpljt88nc" path="res://sprites/libraryMenu.jpg" id="2_asq1c"]
 [ext_resource type="Texture2D" uid="uid://be4ktfbrm3f3l" path="res://sprites/new_sprites/fox-Sheet.png" id="3_gbynd"]
 [ext_resource type="FontFile" uid="uid://bf0pe3farcj0h" path="res://fonts/pixelcyr_normal.ttf" id="4_q7dts"]
 [ext_resource type="AudioStream" uid="uid://cd5i685dm7ysb" path="res://sounds/free/Story_begins.wav" id="5_egliw"]
+[ext_resource type="PackedScene" uid="uid://bphop7lp6nsgf" path="res://scenes/other/blackout.tscn" id="6_1j17x"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_cyf2f"]
 atlas = ExtResource("3_gbynd")
@@ -73,16 +74,21 @@ animations = [{
 [node name="Menu" type="Node2D"]
 script = ExtResource("1_yg43f")
 
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+position = Vector2(624, 307)
+color = Color(0.798252, 0.738749, 0.968508, 1)
+
 [node name="Sprite2D" type="Sprite2D" parent="."]
 modulate = Color(0.836755, 0.836755, 0.836755, 1)
-texture_filter = 1
+texture_filter = 4
 position = Vector2(636.9, 340.9)
-scale = Vector2(1.22492, 1.24552)
-texture = ExtResource("2_mnhu7")
+scale = Vector2(2.745, 2.792)
+texture = ExtResource("2_asq1c")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+visible = false
 texture_filter = 1
-position = Vector2(920, 419)
+position = Vector2(958, 406)
 scale = Vector2(12.2812, 12.1875)
 sprite_frames = SubResource("SpriteFrames_1g08e")
 animation = &"walk_down"
@@ -112,7 +118,7 @@ offset_right = 288.0
 offset_bottom = 352.0
 theme_override_fonts/font = ExtResource("4_q7dts")
 theme_override_font_sizes/font_size = 24
-text = "about"
+text = "settings"
 
 [node name="Label2" type="Label" parent="."]
 offset_left = -72.0
@@ -131,17 +137,15 @@ offset_right = 544.0
 offset_bottom = 120.0
 theme_override_fonts/font = ExtResource("4_q7dts")
 theme_override_font_sizes/font_size = 48
-text = "Enchanted Worlds"
+text = "Enchanted Worlds (demo_)"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_egliw")
 autoplay = true
 
-[node name="play_timer" type="Timer" parent="."]
-wait_time = 1.7
+[node name="Blackout" parent="." instance=ExtResource("6_1j17x")]
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]
 [connection signal="pressed" from="Button3" to="." method="_on_button_3_pressed"]
 [connection signal="finished" from="AudioStreamPlayer" to="." method="_on_audio_stream_player_finished"]
-[connection signal="timeout" from="play_timer" to="." method="_on_timer_timeout"]
