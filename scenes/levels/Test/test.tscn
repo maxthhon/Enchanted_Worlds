@@ -47,8 +47,6 @@ script = ExtResource("7_mtuol")
 SlimeScene = ExtResource("4_udku0")
 
 [node name="Character" parent="." instance=ExtResource("2_ytjyx")]
-z_index = 1
-position = Vector2(651.55, 361)
 
 [node name="Music" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("5_7exg2")

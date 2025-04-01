@@ -1,8 +1,8 @@
 [gd_scene load_steps=6 format=3 uid="uid://bwpnjvb7odx20"]
 
 [ext_resource type="Script" uid="uid://bp2pa1khnprvx" path="res://objects/item/Candle.cs" id="1_gvtk8"]
-[ext_resource type="Texture2D" uid="uid://bq163eynbt0jd" path="res://sprites/new_sprites/light.png" id="1_uqdgg"]
 [ext_resource type="Texture2D" uid="uid://t7jsd8lnlutt" path="res://sprites/new_sprites/candle-Sheet.png" id="2_djxun"]
+[ext_resource type="Texture2D" uid="uid://dtq0783t7o2ch" path="res://sprites/new_sprites/light 2.png" id="2_hx7od"]
 [ext_resource type="Texture2D" uid="uid://dvrli4pesltwh" path="res://sprites/MediumShadow.png" id="4_guogg"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_d7irv"]
@@ -14,8 +14,10 @@ script = ExtResource("1_gvtk8")
 
 [node name="LightArea" type="PointLight2D" parent="."]
 texture_filter = 1
-color = Color(1, 0.639216, 0.25098, 1)
-texture = ExtResource("1_uqdgg")
+color = Color(0.992157, 1, 0.635294, 1)
+shadow_enabled = true
+texture = ExtResource("2_hx7od")
+texture_scale = 0.1
 
 [node name="fireLight" type="Sprite2D" parent="."]
 texture = ExtResource("2_djxun")
@@ -23,7 +25,6 @@ region_enabled = true
 region_rect = Rect2(64, 0, 32, 32)
 
 [node name="PointLight2D" type="PointLight2D" parent="fireLight"]
-visible = false
 texture_filter = 1
 enabled = false
 texture = SubResource("AtlasTexture_d7irv")
