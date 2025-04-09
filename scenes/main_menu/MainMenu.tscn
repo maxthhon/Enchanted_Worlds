@@ -1,11 +1,22 @@
-[gd_scene load_steps=16 format=3 uid="uid://c8iip8sd4vjru"]
+[gd_scene load_steps=21 format=3 uid="uid://c8iip8sd4vjru"]
 
 [ext_resource type="Script" uid="uid://dlh36dqcmnqtk" path="res://scenes/main_menu/MainMenu.cs" id="1_yg43f"]
-[ext_resource type="Texture2D" uid="uid://corhhpljt88nc" path="res://sprites/libraryMenu.jpg" id="2_asq1c"]
+[ext_resource type="Texture2D" uid="uid://b4d2t1a5y0dip" path="res://sprites/new_sprites/background.png" id="2_wckin"]
+[ext_resource type="SpriteFrames" uid="uid://ba3b4f3hgcxj7" path="res://sprites/new_sprites/base-book.aseprite" id="3_6k0m2"]
 [ext_resource type="Texture2D" uid="uid://be4ktfbrm3f3l" path="res://sprites/new_sprites/fox-Sheet.png" id="3_gbynd"]
 [ext_resource type="FontFile" uid="uid://bf0pe3farcj0h" path="res://fonts/pixelcyr_normal.ttf" id="4_q7dts"]
+[ext_resource type="PackedScene" uid="uid://p52bvvsbwepp" path="res://objects/item/Candle.tscn" id="5_arvcj"]
 [ext_resource type="AudioStream" uid="uid://cd5i685dm7ysb" path="res://sounds/free/Story_begins.wav" id="5_egliw"]
+[ext_resource type="Texture2D" uid="uid://do70270f5jnq" path="res://sprites/new_sprites/base-buttons.png" id="5_qq55g"]
 [ext_resource type="PackedScene" uid="uid://bphop7lp6nsgf" path="res://scenes/other/blackout.tscn" id="6_1j17x"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pkvjm"]
+atlas = ExtResource("5_qq55g")
+region = Rect2(0, 16, 59.0308, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6gdku"]
+atlas = ExtResource("5_qq55g")
+region = Rect2(0, 0, 59, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_cyf2f"]
 atlas = ExtResource("3_gbynd")
@@ -76,14 +87,105 @@ script = ExtResource("1_yg43f")
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 position = Vector2(624, 307)
-color = Color(0.798252, 0.738749, 0.968508, 1)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 modulate = Color(0.836755, 0.836755, 0.836755, 1)
 texture_filter = 4
-position = Vector2(636.9, 340.9)
-scale = Vector2(2.745, 2.792)
-texture = ExtResource("2_asq1c")
+position = Vector2(638.66, 360.656)
+scale = Vector2(10.0366, 5.646)
+texture = ExtResource("2_wckin")
+
+[node name="CanvasGroup" type="CanvasGroup" parent="."]
+position = Vector2(60.56, 334.56)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasGroup"]
+position = Vector2(534.99, 395.84)
+scale = Vector2(5, 5)
+sprite_frames = ExtResource("3_6k0m2")
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="CanvasGroup"]
+position = Vector2(534.99, 390.84)
+scale = Vector2(5, 5)
+sprite_frames = ExtResource("3_6k0m2")
+frame = 1
+
+[node name="Label" type="Label" parent="CanvasGroup"]
+offset_left = 35.99
+offset_top = -128.16
+offset_right = 185.99
+offset_bottom = -85.16
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("4_q7dts")
+theme_override_font_sizes/font_size = 37
+text = "(demo_)"
+
+[node name="TextureButton" type="TextureButton" parent="CanvasGroup"]
+offset_left = 29.44
+offset_top = -36.56
+offset_right = 93.44
+offset_bottom = -20.56
+scale = Vector2(5, 5)
+texture_normal = SubResource("AtlasTexture_pkvjm")
+texture_pressed = SubResource("AtlasTexture_6gdku")
+
+[node name="TextureButton2" type="TextureButton" parent="CanvasGroup"]
+offset_left = 29.44
+offset_top = 40.44
+offset_right = 93.44
+offset_bottom = 56.44
+scale = Vector2(5, 5)
+texture_normal = SubResource("AtlasTexture_pkvjm")
+texture_pressed = SubResource("AtlasTexture_6gdku")
+
+[node name="TextureButton3" type="TextureButton" parent="CanvasGroup"]
+offset_left = 29.44
+offset_top = 119.44
+offset_right = 93.44
+offset_bottom = 135.44
+scale = Vector2(5, 5)
+texture_normal = SubResource("AtlasTexture_pkvjm")
+texture_pressed = SubResource("AtlasTexture_6gdku")
+
+[node name="Button" type="Button" parent="CanvasGroup"]
+texture_filter = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_left = 40.0
+offset_top = -25.0
+offset_right = 302.0
+offset_bottom = 20.0
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("4_q7dts")
+theme_override_font_sizes/font_size = 32
+text = "Play"
+alignment = 0
+
+[node name="Button2" type="Button" parent="CanvasGroup"]
+texture_filter = 1
+offset_left = 41.0
+offset_top = 131.0
+offset_right = 303.0
+offset_bottom = 176.0
+theme_override_fonts/font = ExtResource("4_q7dts")
+theme_override_font_sizes/font_size = 24
+text = "exit"
+alignment = 0
+
+[node name="Button3" type="Button" parent="CanvasGroup"]
+texture_filter = 1
+offset_left = 41.0
+offset_top = 52.0
+offset_right = 302.0
+offset_bottom = 97.0
+theme_override_fonts/font = ExtResource("4_q7dts")
+theme_override_font_sizes/font_size = 24
+text = "settings"
+alignment = 0
+
+[node name="Candle" parent="." instance=ExtResource("5_arvcj")]
+visible = false
+position = Vector2(1050, 623)
+scale = Vector2(10, 10)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 visible = false
@@ -93,51 +195,24 @@ scale = Vector2(12.2812, 12.1875)
 sprite_frames = SubResource("SpriteFrames_1g08e")
 animation = &"walk_down"
 
-[node name="Button" type="Button" parent="."]
-offset_left = 32.0
-offset_top = 256.0
-offset_right = 288.0
-offset_bottom = 304.0
-theme_override_fonts/font = ExtResource("4_q7dts")
-theme_override_font_sizes/font_size = 32
-text = "Play"
-
-[node name="Button2" type="Button" parent="."]
-offset_left = 32.0
-offset_top = 360.0
-offset_right = 288.0
-offset_bottom = 400.0
-theme_override_fonts/font = ExtResource("4_q7dts")
-theme_override_font_sizes/font_size = 24
-text = "exit"
-
-[node name="Button3" type="Button" parent="."]
-offset_left = 32.0
-offset_top = 312.0
-offset_right = 288.0
-offset_bottom = 352.0
-theme_override_fonts/font = ExtResource("4_q7dts")
-theme_override_font_sizes/font_size = 24
-text = "settings"
-
 [node name="Label2" type="Label" parent="."]
-offset_left = -72.0
-offset_top = -8.0
-offset_right = 1296.0
-offset_bottom = 136.0
+offset_left = 34.0
+offset_top = 10.0
+offset_right = 1402.0
+offset_bottom = 154.0
 theme_override_colors/font_color = Color(0, 0, 0, 0.458824)
 theme_override_fonts/font = ExtResource("4_q7dts")
 theme_override_font_sizes/font_size = 128
 text = "Enchanted worlds"
 
 [node name="Label" type="Label" parent="."]
-offset_left = 32.0
-offset_top = 56.0
-offset_right = 544.0
-offset_bottom = 120.0
+offset_left = 64.0
+offset_top = 58.0
+offset_right = 576.0
+offset_bottom = 122.0
 theme_override_fonts/font = ExtResource("4_q7dts")
 theme_override_font_sizes/font_size = 48
-text = "Enchanted Worlds (demo_)"
+text = "Enchanted Worlds"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_egliw")
@@ -145,7 +220,7 @@ autoplay = true
 
 [node name="Blackout" parent="." instance=ExtResource("6_1j17x")]
 
-[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
-[connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]
-[connection signal="pressed" from="Button3" to="." method="_on_button_3_pressed"]
+[connection signal="pressed" from="CanvasGroup/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="CanvasGroup/Button2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="CanvasGroup/Button3" to="." method="_on_button_3_pressed"]
 [connection signal="finished" from="AudioStreamPlayer" to="." method="_on_audio_stream_player_finished"]

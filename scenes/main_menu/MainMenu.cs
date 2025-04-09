@@ -43,7 +43,7 @@ public partial class MainMenu : Node2D
 		switch (buttonPressed)
 		{
 			case 1:
-				GetTree().ChangeSceneToFile("res://scenes/levels/Test/test.tscn");
+				GetTree().ChangeSceneToFile("res://scenes/levels/Test2/test2.tscn");
 				break;
 			case 2:
 				GetTree().Quit();

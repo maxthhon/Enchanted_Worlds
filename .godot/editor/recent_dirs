@@ -1,4 +1,2 @@
 res://sprites/new_sprites
-res://sprites
-res://objects/structure/Tiles
-res://objects/creature/TileCharacter
+res://objects/entity/tile_charcter

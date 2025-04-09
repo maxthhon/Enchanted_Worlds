@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://s5clmxth5a1v"
+path="res://.godot/imported/Progress.ase-85b99ec95fb6bcf31411da3f5607a398.res"
+
+[deps]
+
+source_file="res://sprites/Progress.ase"
+dest_files=["res://.godot/imported/Progress.ase-85b99ec95fb6bcf31411da3f5607a398.res"]
+
+[params]
+

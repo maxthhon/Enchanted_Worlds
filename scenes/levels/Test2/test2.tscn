@@ -1,51 +1,23 @@
-[gd_scene load_steps=10 format=3 uid="uid://7qgng0uecwb8"]
+[gd_scene load_steps=7 format=3 uid="uid://7qgng0uecwb8"]
 
 [ext_resource type="Script" uid="uid://dvcb42wijsf65" path="res://scenes/levels/Test2/Test2.cs" id="1_k2s5j"]
-[ext_resource type="PackedScene" uid="uid://dke7jl3melbcs" path="res://objects/creature/TileCharacter/TileCharacter.tscn" id="2_u3bef"]
+[ext_resource type="PackedScene" uid="uid://dke7jl3melbcs" path="res://objects/entity/TileCharacter/TileCharacter.tscn" id="2_u3bef"]
 [ext_resource type="PackedScene" uid="uid://bphop7lp6nsgf" path="res://scenes/other/blackout.tscn" id="2_u8htc"]
-[ext_resource type="Texture2D" uid="uid://b4d2t1a5y0dip" path="res://sprites/new_sprites/background.png" id="3_f2wuj"]
+[ext_resource type="Script" uid="uid://ckyardsynifar" path="res://scenes/levels/Test2/TileSetter.cs" id="3_u3bef"]
 [ext_resource type="PackedScene" uid="uid://xgbn4op2c2a3" path="res://objects/structure/Tiles/grass2.tscn" id="4_u3bef"]
-[ext_resource type="PackedScene" uid="uid://bwpnjvb7odx20" path="res://objects/item/Candle.tscn" id="5_shlwa"]
-[ext_resource type="Texture2D" uid="uid://dtq0783t7o2ch" path="res://sprites/new_sprites/light 2.png" id="7_7fmos"]
-[ext_resource type="Texture2D" uid="uid://d2spod6otp1qj" path="res://sprites/black.png" id="8_6jjl6"]
-
-[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_ty3uh"]
-polygon = PackedVector2Array(-16, -14.7692, 16, -14.7692, 16, 17.2308, -16, 17.2308)
+[ext_resource type="Script" uid="uid://pumhehl5dnx" path="res://scenes/levels/Test2/PlayerSpawner.cs" id="5_shlwa"]
 
 [node name="Test2" type="Node2D"]
+texture_filter = 1
 script = ExtResource("1_k2s5j")
 
 [node name="Blackout" parent="." instance=ExtResource("2_u8htc")]
 
-[node name="Sprite2D2" type="Sprite2D" parent="."]
-position = Vector2(150, 62)
-scale = Vector2(3.46094, 2.82812)
-texture = ExtResource("3_f2wuj")
+[node name="TileSetter" type="Node2D" parent="."]
+script = ExtResource("3_u3bef")
+GrassTileScene = ExtResource("4_u3bef")
 
-[node name="GrassTile" parent="." instance=ExtResource("4_u3bef")]
-position = Vector2(32, 16)
-
-[node name="GrassTile2" parent="." instance=ExtResource("4_u3bef")]
-position = Vector2(0, 16)
-
-[node name="Character" parent="." instance=ExtResource("2_u3bef")]
-
-[node name="Candle" parent="." instance=ExtResource("5_shlwa")]
-position = Vector2(18, 27)
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-visible = false
-position = Vector2(-6, 46)
-scale = Vector2(0.75, 0.8125)
-texture = ExtResource("8_6jjl6")
-
-[node name="LightOccluder2D" type="LightOccluder2D" parent="Sprite2D"]
-position = Vector2(0, -1.23077)
-occluder = SubResource("OccluderPolygon2D_ty3uh")
-
-[node name="PointLight2D" type="PointLight2D" parent="."]
-visible = false
-position = Vector2(-46, 39)
-shadow_enabled = true
-texture = ExtResource("7_7fmos")
-texture_scale = 0.25
+[node name="PlayerSpawner" type="Node2D" parent="."]
+script = ExtResource("5_shlwa")
+PlayerScene = ExtResource("2_u3bef")
+SpawnPosition = Vector2(0, 0)

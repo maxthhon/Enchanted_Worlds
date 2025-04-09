@@ -1,8 +1,4 @@
-Polygon2D
-LightOccluder2D
+TextureButton
+AnimatedSprite2D
+CanvasGroup
 Sprite2D
-PointLight2D
-Node2D
-CollisionShape2D
-StaticBody2D
-Area2D

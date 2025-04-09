@@ -1,9 +1,0 @@
-res://scenes/main_menu/MainMenu.tscn
-res://sprites/tile_terra.tres
-res://sprites/tile_set_base.tres
-res://scenes/levels/Test/test.tscn
-res://scenes/levels/Test2/test2.tscn
-res://objects/creature/TileCharacter/TileCharacter.tscn
-res://objects/creature/Slime/Slime.tscn
-res://objects/structure/Tiles/grass2.tscn
-res://objects/item/Candle.tscn

@@ -2,10 +2,10 @@
 
 [ext_resource type="Script" uid="uid://cvmsusp3pxkby" path="res://scenes/levels/Test/Test.cs" id="1_7eptq"]
 [ext_resource type="TileSet" uid="uid://4wguoepu3bil" path="res://sprites/tile_terra.tres" id="1_8nwkr"]
-[ext_resource type="PackedScene" uid="uid://bv18l1ikjwrkq" path="res://objects/creature/Character/Character.tscn" id="2_ytjyx"]
+[ext_resource type="PackedScene" uid="uid://bv18l1ikjwrkq" path="res://objects/entity/Character/Character.tscn" id="2_ytjyx"]
 [ext_resource type="PackedScene" uid="uid://bacd8gv2afpld" path="res://objects/structure/Tower/Tower.tscn" id="3_djnqx"]
 [ext_resource type="PackedScene" uid="uid://bwpnjvb7odx20" path="res://objects/item/Candle.tscn" id="4_q4t3l"]
-[ext_resource type="PackedScene" uid="uid://bykot8cr6cp88" path="res://objects/creature/Slime/Slime.tscn" id="4_udku0"]
+[ext_resource type="PackedScene" uid="uid://bykot8cr6cp88" path="res://objects/entity/Slime/Slime.tscn" id="4_udku0"]
 [ext_resource type="AudioStream" uid="uid://cdjeh8f3ek5mi" path="res://sounds/free/New_adventure.wav" id="5_7exg2"]
 [ext_resource type="Script" uid="uid://r0qhdpphdmul" path="res://scenes/levels/Test/SlimeSpawner.cs" id="7_mtuol"]
 [ext_resource type="PackedScene" uid="uid://bphop7lp6nsgf" path="res://scenes/other/blackout.tscn" id="9_lj8bv"]

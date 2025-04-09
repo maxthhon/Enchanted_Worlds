@@ -1,6 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://bwpnjvb7odx20"]
+[gd_scene load_steps=6 format=3 uid="uid://p52bvvsbwepp"]
 
-[ext_resource type="Script" uid="uid://bp2pa1khnprvx" path="res://objects/item/Candle.cs" id="1_gvtk8"]
+[ext_resource type="Script" uid="uid://bp2pa1khnprvx" path="res://objects/item/candle/Candle.cs" id="1_gvtk8"]
 [ext_resource type="Texture2D" uid="uid://t7jsd8lnlutt" path="res://sprites/new_sprites/candle-Sheet.png" id="2_djxun"]
 [ext_resource type="Texture2D" uid="uid://dtq0783t7o2ch" path="res://sprites/new_sprites/light 2.png" id="2_hx7od"]
 [ext_resource type="Texture2D" uid="uid://dvrli4pesltwh" path="res://sprites/MediumShadow.png" id="4_guogg"]
@@ -20,6 +20,7 @@ texture = ExtResource("2_hx7od")
 texture_scale = 0.1
 
 [node name="fireLight" type="Sprite2D" parent="."]
+light_mask = 2
 texture = ExtResource("2_djxun")
 region_enabled = true
 region_rect = Rect2(64, 0, 32, 32)
@@ -34,6 +35,7 @@ position = Vector2(0, 9.09)
 texture = ExtResource("4_guogg")
 
 [node name="Candle" type="Sprite2D" parent="."]
+light_mask = 2
 texture_filter = 1
 texture = ExtResource("2_djxun")
 region_enabled = true
