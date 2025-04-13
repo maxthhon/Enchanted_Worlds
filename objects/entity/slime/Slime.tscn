@@ -1,0 +1,211 @@
+[gd_scene load_steps=28 format=3 uid="uid://bykot8cr6cp88"]
+
+[ext_resource type="Script" uid="uid://ehc61yqp2pjd" path="res://objects/entity/Slime/Slime.cs" id="1_y2qw8"]
+[ext_resource type="Texture2D" uid="uid://dvrli4pesltwh" path="res://sprites/MediumShadow.png" id="2_2s71c"]
+[ext_resource type="Texture2D" uid="uid://c3222rgkfgkjq" path="res://sprites/new_sprites/slime-Sheet.png" id="3_rfr6r"]
+[ext_resource type="Texture2D" uid="uid://f7y0xc513lko" path="res://sprites/new_sprites/healthBar_under.png" id="5_5w12u"]
+[ext_resource type="Texture2D" uid="uid://bb6my0c4qqhk6" path="res://sprites/new_sprites/healthBar_progress.png" id="6_bove2"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_l5y2c"]
+radius = 9.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1ntsf"]
+atlas = ExtResource("3_rfr6r")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4xusp"]
+atlas = ExtResource("3_rfr6r")
+region = Rect2(0, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5bpwm"]
+atlas = ExtResource("3_rfr6r")
+region = Rect2(32, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1jjwm"]
+atlas = ExtResource("3_rfr6r")
+region = Rect2(64, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0yp3m"]
+atlas = ExtResource("3_rfr6r")
+region = Rect2(96, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_osly8"]
+atlas = ExtResource("3_rfr6r")
+region = Rect2(128, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sdgxv"]
+atlas = ExtResource("3_rfr6r")
+region = Rect2(160, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y7rco"]
+atlas = ExtResource("3_rfr6r")
+region = Rect2(192, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p1q6b"]
+atlas = ExtResource("3_rfr6r")
+region = Rect2(224, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dsqd4"]
+atlas = ExtResource("3_rfr6r")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2t7e2"]
+atlas = ExtResource("3_rfr6r")
+region = Rect2(224, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1a323"]
+atlas = ExtResource("3_rfr6r")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ohjfi"]
+atlas = ExtResource("3_rfr6r")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xcsyl"]
+atlas = ExtResource("3_rfr6r")
+region = Rect2(64, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0kaey"]
+atlas = ExtResource("3_rfr6r")
+region = Rect2(96, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lsnmk"]
+atlas = ExtResource("3_rfr6r")
+region = Rect2(128, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hceu0"]
+atlas = ExtResource("3_rfr6r")
+region = Rect2(160, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gg4pe"]
+atlas = ExtResource("3_rfr6r")
+region = Rect2(192, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vim2o"]
+atlas = ExtResource("3_rfr6r")
+region = Rect2(224, 32, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_on2ry"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1ntsf")
+}],
+"loop": true,
+"name": &"dam_take",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4xusp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5bpwm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1jjwm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0yp3m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_osly8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sdgxv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y7rco")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p1q6b")
+}],
+"loop": true,
+"name": &"die",
+"speed": 11.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dsqd4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2t7e2")
+}],
+"loop": true,
+"name": &"stage",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1a323")
+}, {
+"duration": 0.4,
+"texture": SubResource("AtlasTexture_ohjfi")
+}, {
+"duration": 0.6,
+"texture": SubResource("AtlasTexture_xcsyl")
+}, {
+"duration": 0.8,
+"texture": SubResource("AtlasTexture_0kaey")
+}, {
+"duration": 0.7,
+"texture": SubResource("AtlasTexture_lsnmk")
+}, {
+"duration": 0.5,
+"texture": SubResource("AtlasTexture_hceu0")
+}, {
+"duration": 0.4,
+"texture": SubResource("AtlasTexture_gg4pe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vim2o")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 6.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_jv7ps"]
+
+[node name="Slime" type="CharacterBody2D"]
+visibility_layer = 2
+script = ExtResource("1_y2qw8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+light_mask = 2
+shape = SubResource("CircleShape2D_l5y2c")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(0, 6.5)
+scale = Vector2(1, 0.7)
+texture = ExtResource("2_2s71c")
+
+[node name="Slime_Ani" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(0, -9)
+sprite_frames = SubResource("SpriteFrames_on2ry")
+animation = &"die"
+
+[node name="AnimationCooldout" type="Timer" parent="Slime_Ani"]
+
+[node name="SlimeHitbox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SlimeHitbox"]
+shape = SubResource("CircleShape2D_jv7ps")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+
+[node name="HealthBar" type="TextureProgressBar" parent="."]
+texture_filter = 1
+offset_left = -12.0
+offset_top = -27.0
+offset_right = 20.0
+offset_bottom = -23.0
+scale = Vector2(0.75, 0.75)
+texture_under = ExtResource("5_5w12u")
+texture_progress = ExtResource("6_bove2")
+
+[connection signal="frame_changed" from="Slime_Ani" to="." method="_on_slime_ani_frame_changed"]
+[connection signal="timeout" from="Slime_Ani/AnimationCooldout" to="." method="_on_animation_cooldout_timeout"]
+[connection signal="body_entered" from="SlimeHitbox" to="." method="_on_slime_hitbox_body_entered"]

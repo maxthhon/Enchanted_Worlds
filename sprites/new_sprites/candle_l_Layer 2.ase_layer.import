@@ -1,0 +1,16 @@
+[remap]
+
+importer="aseprite_wizard.plugin.spriteframes-split-layer"
+type="SpriteFrames"
+uid="uid://dv2in8crwb3q0"
+path="res://.godot/imported/candle_l_Layer 2.ase_layer-248a69e798b358e3ed34d12d48462b7e.res"
+
+[deps]
+
+files=["res://.godot/imported/candle_l_Layer 2.ase_layer-248a69e798b358e3ed34d12d48462b7e.Layer 2.texture.res"]
+
+source_file="res://sprites/new_sprites/candle_l_Layer 2.ase_layer"
+dest_files=["res://.godot/imported/candle_l_Layer 2.ase_layer-248a69e798b358e3ed34d12d48462b7e.res", "res://.godot/imported/candle_l_Layer 2.ase_layer-248a69e798b358e3ed34d12d48462b7e.Layer 2.texture.res"]
+
+[params]
+

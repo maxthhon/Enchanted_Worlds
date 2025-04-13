@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=3 uid="uid://xgbn4op2c2a3"]
+
+[ext_resource type="Script" uid="uid://bg31ou0sahfue" path="res://objects/structure/Tiles/Grass2.cs" id="1_yitv0"]
+[ext_resource type="Texture2D" uid="uid://dk7nx0krcp4si" path="res://sprites/new_sprites/grass_tile.png" id="2_yitv0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rx6rv"]
+size = Vector2(26, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jk0cn"]
+size = Vector2(26, 24)
+
+[node name="GrassTile" type="StaticBody2D"]
+script = ExtResource("1_yitv0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_rx6rv")
+
+[node name="TileHitBox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TileHitBox"]
+shape = SubResource("RectangleShape2D_jk0cn")
+debug_color = Color(0.862998, 0.300447, 0.51101, 0.42)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, 4)
+texture = ExtResource("2_yitv0")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 1.315
+
+[connection signal="area_entered" from="TileHitBox" to="." method="_on_tile_hit_box_area_entered"]
+[connection signal="area_exited" from="TileHitBox" to="." method="_on_tile_hit_box_area_exited"]
+[connection signal="timeout" from="Timer" to="." method="_on_anumation_frame_timeout"]

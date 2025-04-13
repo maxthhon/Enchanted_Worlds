@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://cud4qsukb3tdy"]
+
+[ext_resource type="PackedScene" uid="uid://xgbn4op2c2a3" path="res://objects/structure/Tiles/grass2.tscn" id="1_rx6rv"]
+
+[node name="Grass" type="Node2D"]
+
+[node name="StaticBody2D" parent="." instance=ExtResource("1_rx6rv")]
