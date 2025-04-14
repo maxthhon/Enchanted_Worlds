@@ -17,7 +17,7 @@ region = Rect2(32, 144, 53, 10)
 
 [sub_resource type="LabelSettings" id="LabelSettings_44hkp"]
 font = ExtResource("2_c820f")
-font_size = 9
+font_size = 7
 
 [node name="Button" type="TextureButton"]
 texture_filter = 1

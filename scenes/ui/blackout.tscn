@@ -6,8 +6,3 @@
 energy = 0.0
 blend_mode = 1
 script = ExtResource("1_5s283")
-
-[node name="Timer" type="Timer" parent="."]
-wait_time = 0.01
-
-[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

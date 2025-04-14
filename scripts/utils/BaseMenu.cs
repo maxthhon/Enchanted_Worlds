@@ -8,6 +8,7 @@ public partial class BaseMenu : Control
 	protected int buttonPressed;
 
 	private Sprite2D book;
+	private Label label;
 	private Tween tween;
 
 	public override void _Ready()
@@ -15,6 +16,7 @@ public partial class BaseMenu : Control
 		audioPlayer = GetNode<AudioStreamPlayer>("AudioStreamPlayer");
 		blackout = GetNode<Blackout>("Blackout");
 		book = GetNode<Sprite2D>("Book");
+		label = GetNode<Label>("GameName");
 
 		tween = GetTree().CreateTween();
 
@@ -27,7 +29,8 @@ public partial class BaseMenu : Control
 	public void LaunchBookToCenter()
 	{
 		Vector2 screenCenter = GetViewport().GetVisibleRect().Size / 2;
-		float targetRotation = (float)Mathf.DegToRad(GD.RandRange(-3f, 3f));
+		screenCenter.X -= GD.RandRange(75, 80); // случайное смещение влево
+		float targetRotation = (float)Mathf.DegToRad(GD.RandRange(-6f, -3f));
 
 		if (tween != null && tween.IsRunning())
 			tween.Kill();
@@ -42,6 +45,10 @@ public partial class BaseMenu : Control
 		tween.Parallel().TweenProperty(book, "rotation", targetRotation, 1.0f)
 			.SetTrans(Tween.TransitionType.Sine)
 			.SetEase(Tween.EaseType.Out);
+			
+		tween.TweenProperty(label, "global_position", new Vector2(10, (screenCenter.Y / 10) - 5), 2.0f)
+			.SetTrans(Tween.TransitionType.Elastic)
+			.SetEase(Tween.EaseType.InOut);
 	}
 
 	public void _on_button_pressed()

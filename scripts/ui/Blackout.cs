@@ -4,49 +4,40 @@ using System;
 public partial class Blackout : DirectionalLight2D
 {
 	private bool isSwitchedOn = true;
-	// Called when the node enters the scene tree for the first time.
-	Timer timer;
-	DirectionalLight2D blackout;
+	private Tween tween;
 
-	// Делегат для callback-функции
+	// Делегат и событие для callback
 	public delegate void TransitionCompleteCallback(bool isSwitchedOn);
-
-	// Событие, которое будет вызывать callback-функцию
 	public event TransitionCompleteCallback OnTransitionComplete;
 
 	public override void _Ready()
 	{
-		timer = GetNode<Timer>("Timer");
-		
 		Energy = 2;
 	}
 
-	// Called every frame. 'delta' is the elapsed time since the previous frame.
-	public override void _Process(double delta)
+	public void SetBlackout(bool switchOn)
 	{
-	}
+		isSwitchedOn = switchOn;
 
-	public void _on_timer_timeout()
-	{
+		// Если старый Tween ещё работает — убить его
+		if (tween != null && tween.IsRunning())
+			tween.Kill();
+
+		// Новый tween
+		tween = CreateTween();
+
+		// Целевое значение энергии
 		float targetEnergy = isSwitchedOn ? 2.0f : 0.0f;
-		float expFactor = 0.1f; // Коэффициент экспоненциального приближения (0.0f до 1.0f)
 
-		Energy = Energy * (1.0f - expFactor) + targetEnergy * expFactor;
+		// Настройка анимации
+		tween.TweenProperty(this, "energy", targetEnergy, 0.5f)
+			.SetTrans(Tween.TransitionType.Sine)
+			.SetEase(Tween.EaseType.InOut);
 
-		if (Mathf.Abs(Energy - targetEnergy) < 0.001f)
+		// Когда анимация завершится — вызвать событие
+		tween.Finished += () =>
 		{
-			timer.Autostart = false;
-			timer.Stop();
-
-			// Вызов callback-функции
 			OnTransitionComplete?.Invoke(isSwitchedOn);
-		}
-	}
-
-	public void SetBlackout(bool isSwitchedOn)
-	{
-		this.isSwitchedOn = isSwitchedOn;
-		timer.Autostart = true;
-		timer.Start();
+		};
 	}
 }
