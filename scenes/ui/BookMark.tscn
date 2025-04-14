@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://du885y5q0gwpv"]
+
+[ext_resource type="Texture2D" uid="uid://bbd4ofdu6ck8w" path="res://assets/textures/base-book.aseprite" id="1_1vr0j"]
+[ext_resource type="FontFile" uid="uid://5kq0n7bn37pf" path="res://assets/fonts/pixelcyr_normal.ttf" id="2_1blfd"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_i0vgk"]
+font = ExtResource("2_1blfd")
+font_size = 15
+
+[node name="BookMark" type="Node2D"]
+
+[node name="BookMark" type="Sprite2D" parent="."]
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("1_1vr0j")
+region_enabled = true
+region_rect = Rect2(176, 16, 80, 24)
+
+[node name="Label" type="Label" parent="."]
+offset_left = -37.0
+offset_top = -18.0
+offset_right = 40.0
+offset_bottom = 3.0
+size_flags_horizontal = 4
+text = "ТЕКСТ"
+label_settings = SubResource("LabelSettings_i0vgk")

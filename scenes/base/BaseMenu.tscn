@@ -1,0 +1,43 @@
+[gd_scene load_steps=5 format=3 uid="uid://ds1xyyycbj17h"]
+
+[ext_resource type="Script" uid="uid://c3ho6fgkcjjwq" path="res://scripts/utils/BaseMenu.cs" id="1_xhqww"]
+[ext_resource type="PackedScene" uid="uid://bphop7lp6nsgf" path="res://scenes/ui/blackout.tscn" id="2_0uc5b"]
+[ext_resource type="Texture2D" uid="uid://bbd4ofdu6ck8w" path="res://assets/textures/base-book.aseprite" id="3_iqw8a"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xxuy2"]
+atlas = ExtResource("3_iqw8a")
+region = Rect2(16, 16, 144, 96)
+
+[node name="BaseMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_xhqww")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 329.0
+offset_bottom = 182.0
+color = Color(0.381605, 0.228694, 0.279177, 1)
+
+[node name="Blackout" parent="." instance=ExtResource("2_0uc5b")]
+
+[node name="Book" type="Sprite2D" parent="."]
+position = Vector2(163.94, 289.81)
+scale = Vector2(1.5, 1.5)
+texture = SubResource("AtlasTexture_xxuy2")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Book"]
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = -73.0
+offset_top = -98.0
+offset_right = 71.0
+offset_bottom = -3.0
+grow_vertical = 2
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]

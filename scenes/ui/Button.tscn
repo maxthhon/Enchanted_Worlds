@@ -1,0 +1,39 @@
+[gd_scene load_steps=7 format=3 uid="uid://cmgg5he6s544g"]
+
+[ext_resource type="Texture2D" uid="uid://bbd4ofdu6ck8w" path="res://assets/textures/base-book.aseprite" id="1_sjaun"]
+[ext_resource type="FontFile" uid="uid://5kq0n7bn37pf" path="res://assets/fonts/pixelcyr_normal.ttf" id="2_c820f"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c820f"]
+atlas = ExtResource("1_sjaun")
+region = Rect2(32, 128, 53, 10)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_44hkp"]
+atlas = ExtResource("1_sjaun")
+region = Rect2(32, 160, 53, 10)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0qmto"]
+atlas = ExtResource("1_sjaun")
+region = Rect2(32, 144, 53, 10)
+
+[sub_resource type="LabelSettings" id="LabelSettings_44hkp"]
+font = ExtResource("2_c820f")
+font_size = 9
+
+[node name="Button" type="TextureButton"]
+texture_filter = 1
+offset_right = 56.0
+offset_bottom = 16.0
+scale = Vector2(1.5, 1.5)
+texture_normal = SubResource("AtlasTexture_c820f")
+texture_pressed = SubResource("AtlasTexture_44hkp")
+texture_hover = SubResource("AtlasTexture_0qmto")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_top = -1.0
+offset_right = 53.0
+offset_bottom = 11.0
+text = "текст"
+label_settings = SubResource("LabelSettings_44hkp")
+horizontal_alignment = 1
+vertical_alignment = 1

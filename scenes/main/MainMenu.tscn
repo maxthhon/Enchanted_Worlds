@@ -1,0 +1,109 @@
+[gd_scene load_steps=9 format=3 uid="uid://bnrwqy3evhwi2"]
+
+[ext_resource type="PackedScene" uid="uid://ds1xyyycbj17h" path="res://scenes/base/BaseMenu.tscn" id="1_qi05h"]
+[ext_resource type="Texture2D" uid="uid://bbd4ofdu6ck8w" path="res://assets/textures/base-book.aseprite" id="2_uort0"]
+[ext_resource type="FontFile" uid="uid://5kq0n7bn37pf" path="res://assets/fonts/pixelcyr_normal.ttf" id="3_v3gjy"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c820f"]
+atlas = ExtResource("2_uort0")
+region = Rect2(32, 128, 53, 10)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_44hkp"]
+atlas = ExtResource("2_uort0")
+region = Rect2(32, 160, 53, 10)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0qmto"]
+atlas = ExtResource("2_uort0")
+region = Rect2(32, 144, 53, 10)
+
+[sub_resource type="LabelSettings" id="LabelSettings_44hkp"]
+font = ExtResource("3_v3gjy")
+font_size = 9
+
+[sub_resource type="LabelSettings" id="LabelSettings_v3gjy"]
+font = ExtResource("3_v3gjy")
+font_size = 10
+
+[node name="BaseMenu" instance=ExtResource("1_qi05h")]
+
+[node name="Background" parent="." index="0"]
+offset_left = -2.0
+offset_top = -3.0
+offset_right = 320.0
+offset_bottom = 180.0
+
+[node name="VBoxContainer" parent="Book" index="0"]
+anchors_preset = -1
+anchor_bottom = 0.622
+offset_left = -59.0
+offset_top = -75.0
+offset_right = -3.0
+offset_bottom = -30.712
+
+[node name="Button" type="TextureButton" parent="Book/VBoxContainer" index="0"]
+texture_filter = 1
+layout_mode = 2
+texture_normal = SubResource("AtlasTexture_c820f")
+texture_pressed = SubResource("AtlasTexture_44hkp")
+texture_hover = SubResource("AtlasTexture_0qmto")
+
+[node name="Label" type="Label" parent="Book/VBoxContainer/Button" index="0"]
+layout_mode = 0
+offset_top = -1.0
+offset_right = 53.0
+offset_bottom = 11.0
+text = "продрлжить"
+label_settings = SubResource("LabelSettings_44hkp")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button2" type="TextureButton" parent="Book/VBoxContainer" index="1"]
+texture_filter = 1
+layout_mode = 2
+texture_normal = SubResource("AtlasTexture_c820f")
+texture_pressed = SubResource("AtlasTexture_44hkp")
+texture_hover = SubResource("AtlasTexture_0qmto")
+
+[node name="Label" type="Label" parent="Book/VBoxContainer/Button2" index="0"]
+layout_mode = 0
+offset_top = -1.0
+offset_right = 53.0
+offset_bottom = 11.0
+text = "настройки"
+label_settings = SubResource("LabelSettings_44hkp")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button3" type="TextureButton" parent="Book/VBoxContainer" index="2"]
+texture_filter = 1
+layout_mode = 2
+texture_normal = SubResource("AtlasTexture_c820f")
+texture_pressed = SubResource("AtlasTexture_44hkp")
+texture_hover = SubResource("AtlasTexture_0qmto")
+
+[node name="Label" type="Label" parent="Book/VBoxContainer/Button3" index="0"]
+layout_mode = 0
+offset_top = -1.0
+offset_right = 53.0
+offset_bottom = 11.0
+text = "выход"
+label_settings = SubResource("LabelSettings_44hkp")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BookMark" type="Sprite2D" parent="Book" index="1"]
+position = Vector2(-34.6667, -32)
+texture = ExtResource("2_uort0")
+region_enabled = true
+region_rect = Rect2(176, 16, 80, 24)
+
+[node name="Label" type="Label" parent="Book/BookMark" index="0"]
+offset_left = -25.3333
+offset_top = -12.0
+offset_right = 28.6667
+size_flags_horizontal = 4
+text = "_demo"
+label_settings = SubResource("LabelSettings_v3gjy")
+
+[connection signal="pressed" from="Book/VBoxContainer/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Book/VBoxContainer/Button2" to="." method="_on_button_2_pressed"]
