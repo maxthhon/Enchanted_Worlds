@@ -44,16 +44,17 @@ label_settings = SubResource("LabelSettings_fowro")
 
 [node name="Label" type="Label" parent="GameName"]
 layout_mode = 0
-offset_left = -5.0
-offset_top = 1.0
-offset_right = 252.0
-offset_bottom = 32.0
+offset_left = 35.0
+offset_top = 2.0
+offset_right = 292.0
+offset_bottom = 33.0
 text = "Enchanted Worlds"
 label_settings = SubResource("LabelSettings_4s64f")
 
 [node name="Blackout" parent="." instance=ExtResource("2_0uc5b")]
 
 [node name="Book" type="Sprite2D" parent="."]
+texture_filter = 3
 position = Vector2(171.07, 328.47)
 texture = SubResource("AtlasTexture_xxuy2")
 
@@ -68,3 +69,5 @@ offset_bottom = -3.0
 grow_vertical = 2
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+
+[connection signal="finished" from="AudioStreamPlayer" to="." method="_on_audio_stream_player_finished"]

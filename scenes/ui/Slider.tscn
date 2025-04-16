@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://cw32p73r0gngr"]
+
+[ext_resource type="Texture2D" uid="uid://bbd4ofdu6ck8w" path="res://assets/textures/base-book.aseprite" id="1_gknje"]
+[ext_resource type="LabelSettings" uid="uid://dlja5s0176guq" path="res://assets/materials/MenuButton.tres" id="2_u1yn0"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u1yn0"]
+atlas = ExtResource("1_gknje")
+region = Rect2(96, 128, 56, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2okvs"]
+atlas = ExtResource("1_gknje")
+region = Rect2(96, 144, 56, 16)
+
+[node name="Slider" type="TextureButton"]
+texture_filter = 1
+toggle_mode = true
+texture_normal = SubResource("AtlasTexture_u1yn0")
+texture_pressed = SubResource("AtlasTexture_2okvs")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 1.0
+offset_right = 34.0
+offset_bottom = 10.0
+text = "TExt"
+label_settings = ExtResource("2_u1yn0")

@@ -13,7 +13,20 @@ public partial class Character : CharacterBody2D
 	public override void _Ready()
 	{
 		animation = GetNode<AnimatedSprite2D>("CharAnimation");
-		GetNode<Camera2D>("CharCamera").Zoom = new Vector2(4.0f, 4.0f);
+		var camera = GetNode<Camera2D>("CharCamera");
+
+		camera.Zoom = new Vector2(0.7f, 0.7f);
+
+		camera.DragHorizontalEnabled = true;
+		camera.DragVerticalEnabled = true;
+
+		camera.DragLeftMargin = 0.25f;
+		camera.DragRightMargin = 0.25f;
+		camera.DragTopMargin = 0.2f;
+		camera.DragBottomMargin = 0.2f;
+
+		camera.PositionSmoothingEnabled = true;
+		camera.PositionSmoothingSpeed = 5.0f;
 	}
 
 	public override void _PhysicsProcess(double delta)

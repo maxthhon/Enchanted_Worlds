@@ -17,6 +17,11 @@ public partial class Candle : Node2D
 	
 	static float CalculateY(int i)
 	{
+		return (float)(1.95 + 0.05 * Math.Sin((2 * Math.PI * i / 100) + (Math.PI / 2)));
+	}
+	
+	static float CalculateYi(int i)
+	{
 		return (float)(0.95 + 0.05 * Math.Sin((2 * Math.PI * i / 100) + (Math.PI / 2)));
 	}
 
@@ -32,7 +37,7 @@ public partial class Candle : Node2D
 		var fireLight = GetNode<Sprite2D>("fireLight");
 		var Light = GetNode<PointLight2D>("LightArea");
 		
-		fireLight.Scale = new Vector2(1.0f, CalculateY(i));
+		fireLight.Scale = new Vector2(1.0f, CalculateYi(i));
 		Light.Scale = new Vector2(CalculateY(i), CalculateY(i));
 	}
 }

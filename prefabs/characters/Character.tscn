@@ -1,18 +1,29 @@
-[gd_scene load_steps=7 format=3 uid="uid://bv18l1ikjwrkq"]
+[gd_scene load_steps=8 format=3 uid="uid://bv18l1ikjwrkq"]
 
 [ext_resource type="Script" uid="uid://c8xx8uu8655fn" path="res://scripts/characters/Character.cs" id="1_tjwax"]
 [ext_resource type="Texture2D" uid="uid://b271plpxn4unb" path="res://assets/textures/MediumShadow.png" id="2_r3fav"]
 [ext_resource type="SpriteFrames" uid="uid://cmtvit15ooi85" path="res://assets/textures/fox.aseprite" id="3_2fbju"]
 [ext_resource type="Script" uid="uid://dn2fu2ey2vha2" path="res://scripts/characters/CharAnimation.cs" id="4_kayir"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_2fbju"]
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_2xopk"]
+polygon = PackedVector2Array(-7.48, 20, -8.48, 26, 8.52, 26, 7.52, 20)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2xopk"]
+radius = 11.2245
+height = 24.4898
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2fbju"]
-height = 32.0
+radius = 9.0
+height = 18.0
 
 [node name="Character" type="CharacterBody2D"]
+y_sort_enabled = true
 position = Vector2(0.48, 0)
 script = ExtResource("1_tjwax")
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+y_sort_enabled = true
+occluder = SubResource("OccluderPolygon2D_2xopk")
 
 [node name="CharCamera" type="Camera2D" parent="."]
 
@@ -23,22 +34,23 @@ scale = Vector2(1.1875, 0.8)
 texture = ExtResource("2_r3fav")
 
 [node name="CharAnimation" type="AnimatedSprite2D" parent="."]
+z_index = 20
 texture_filter = 1
 sprite_frames = ExtResource("3_2fbju")
 animation = &"stage"
-speed_scale = 0.7
+speed_scale = 0.5
 script = ExtResource("4_kayir")
 
 [node name="CollisionBox" type="CollisionShape2D" parent="."]
-position = Vector2(-0.51, 16.21)
+position = Vector2(-0.48, 15)
 scale = Vector2(0.98, 0.98)
-shape = SubResource("RectangleShape2D_2fbju")
+shape = SubResource("CapsuleShape2D_2xopk")
 
 [node name="PlayerHitBox" type="Area2D" parent="."]
 position = Vector2(1, 1)
 
 [node name="HitBox" type="CollisionShape2D" parent="PlayerHitBox"]
-position = Vector2(-1, 7)
+position = Vector2(-1.48, 14)
 shape = SubResource("CapsuleShape2D_2fbju")
 
 [node name="headdown" type="Timer" parent="."]

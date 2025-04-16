@@ -1,0 +1,16 @@
+[remap]
+
+importer="aseprite_wizard.plugin.static-texture"
+type="PortableCompressedTexture2D"
+uid="uid://3ao4j5isnr2w"
+path="res://.godot/imported/TileSet-library.aseprite-7f168e8d5c48667feb438183de0d93ac.res"
+
+[deps]
+
+source_file="res://assets/textures/TileSet-library.aseprite"
+dest_files=["res://.godot/imported/TileSet-library.aseprite-7f168e8d5c48667feb438183de0d93ac.res"]
+
+[params]
+
+layer/exclude_layers_pattern=""
+layer/only_visible_layers=false

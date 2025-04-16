@@ -1,0 +1,8 @@
+[gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://dlja5s0176guq"]
+
+[ext_resource type="FontFile" uid="uid://5kq0n7bn37pf" path="res://assets/fonts/pixelcyr_normal.ttf" id="1_y55jn"]
+
+[resource]
+font = ExtResource("1_y55jn")
+font_size = 7
+font_color = Color(0.454902, 0.247059, 0.223529, 1)

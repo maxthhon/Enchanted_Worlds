@@ -1,0 +1,25 @@
+[gd_scene load_steps=6 format=3 uid="uid://cyl6i7cx301yb"]
+
+[ext_resource type="Script" uid="uid://dya08wbjr6dir" path="res://scripts/utils/PlayerSpawner.cs" id="1_cpfy1"]
+[ext_resource type="Script" uid="uid://drfdi8ckntx58" path="res://scripts/utils/BaseLevel.cs" id="1_h7yfj"]
+[ext_resource type="PackedScene" uid="uid://bv18l1ikjwrkq" path="res://prefabs/characters/Character.tscn" id="2_mrujj"]
+[ext_resource type="PackedScene" uid="uid://bphop7lp6nsgf" path="res://scenes/ui/blackout.tscn" id="4_n4iwc"]
+[ext_resource type="TileSet" uid="uid://d0eopmh0c52fw" path="res://assets/materials/TileSet.tres" id="5_n4iwc"]
+
+[node name="BaseLevel" type="Node2D"]
+y_sort_enabled = true
+script = ExtResource("1_h7yfj")
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+
+[node name="PlayerSpawner" type="Node2D" parent="."]
+position = Vector2(229, 91)
+script = ExtResource("1_cpfy1")
+PlayerScene = ExtResource("2_mrujj")
+
+[node name="Blackout" parent="." instance=ExtResource("4_n4iwc")]
+
+[node name="TileMap" type="TileMap" parent="."]
+y_sort_enabled = true
+tile_set = ExtResource("5_n4iwc")
+format = 2
