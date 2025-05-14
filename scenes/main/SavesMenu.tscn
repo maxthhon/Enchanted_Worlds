@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://clp7y4dmpcjw2"]
+
+[ext_resource type="PackedScene" uid="uid://ds1xyyycbj17h" path="res://scenes/base/BaseMenu.tscn" id="1_641hw"]
+[ext_resource type="Script" uid="uid://dt7ktfoxl0ldi" path="res://scripts/utils/SavesMenu.cs" id="2_humjm"]
+
+[node name="BaseMenu" instance=ExtResource("1_641hw")]
+script = ExtResource("2_humjm")
+
+[node name="Book" parent="." index="3"]
+modulate = Color(1, 1, 1, 0)

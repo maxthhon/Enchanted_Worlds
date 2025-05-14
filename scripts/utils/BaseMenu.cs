@@ -27,8 +27,4 @@ public partial class BaseMenu : Control
 		// Переопределяется в MainMenu
 	}
 
-	public virtual void _on_audio_stream_player_finished()
-	{
-		audioPlayer.Play();
-	}
 }

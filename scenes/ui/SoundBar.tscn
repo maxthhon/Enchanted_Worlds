@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://dj6ij2oxghtji"]
+
+[ext_resource type="AudioStream" uid="uid://ctea4ai3ckmff" path="res://assets/audio/New_adventure.wav" id="1_3qmn1"]
+
+[node name="SoundBar" type="AudioStreamPlayer"]
+stream = ExtResource("1_3qmn1")
+bus = &"Music"

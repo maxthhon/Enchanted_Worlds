@@ -49,14 +49,17 @@ public partial class MainMenu : BaseMenu
 
 		switch (buttonPressed)
 		{
-			case 1:
+			case 1: // начать
 				GetTree().ChangeSceneToFile("res://scenes/world/TestLevel.tscn");
 				break;
-			case 2:
+			case 2: // настройки
 				GetTree().ChangeSceneToFile("res://scenes/main/SettingsMenu.tscn");
 				break;
-			case 3:
+			case 3: // выход
 				GetTree().Quit();
+				break;
+			case 4: // сохранения
+				GetTree().ChangeSceneToFile("");
 				break;
 		}
 	}
@@ -74,5 +77,10 @@ public partial class MainMenu : BaseMenu
 	private void _on_quit_button_pressed()
 	{
 		SetButtonPressed(3);
+	}
+	
+	private void _on_quit_button_4_pressed()
+	{
+		SetButtonPressed(4);
 	}
 }

@@ -1,0 +1,16 @@
+[remap]
+
+importer="aseprite_wizard.plugin.static-texture"
+type="PortableCompressedTexture2D"
+uid="uid://badtusks6vd7p"
+path="res://.godot/imported/key.aseprite-d00398a2f1a722309d2bad1eac7d6f1a.res"
+
+[deps]
+
+source_file="res://assets/textures/key.aseprite"
+dest_files=["res://.godot/imported/key.aseprite-d00398a2f1a722309d2bad1eac7d6f1a.res"]
+
+[params]
+
+layer/exclude_layers_pattern=""
+layer/only_visible_layers=false
