@@ -1,11 +1,18 @@
-[gd_resource type="TileSet" load_steps=11 format=3 uid="uid://d0eopmh0c52fw"]
+[gd_resource type="TileSet" load_steps=17 format=3 uid="uid://d0eopmh0c52fw"]
 
 [ext_resource type="Texture2D" uid="uid://3ao4j5isnr2w" path="res://assets/textures/TileSet-library.aseprite" id="1_byyu6"]
+[ext_resource type="PackedScene" uid="uid://dvly2507sauw5" path="res://prefabs/items/Key.tscn" id="2_aivne"]
 [ext_resource type="PackedScene" uid="uid://bwpnjvb7odx20" path="res://prefabs/enemies/Candle.tscn" id="2_y4wu7"]
+[ext_resource type="PackedScene" uid="uid://bh070jhr3tel5" path="res://prefabs/items/Lock.tscn" id="4_oa0ol"]
+[ext_resource type="PackedScene" uid="uid://be55x3karc4s8" path="res://prefabs/enemies/Exit.tscn" id="5_oa0ol"]
 
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_y4wu7"]
 resource_name = "candle"
 scenes/1/scene = ExtResource("2_y4wu7")
+
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_kxc4r"]
+resource_name = "Key"
+scenes/1/scene = ExtResource("2_aivne")
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_y4wu7"]
 polygon = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
@@ -320,8 +327,19 @@ texture = ExtResource("1_byyu6")
 14:7/0 = 0
 15:7/0 = 0
 
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_f6b6b"]
+resource_name = "Lock"
+scenes/1/scene = ExtResource("4_oa0ol")
+
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_mqqhy"]
+resource_name = "Exit"
+scenes/1/scene = ExtResource("5_oa0ol")
+
 [resource]
 occlusion_layer_0/light_mask = 1
 physics_layer_0/collision_layer = 1
 sources/2 = SubResource("TileSetAtlasSource_byyu6")
 sources/0 = SubResource("TileSetScenesCollectionSource_y4wu7")
+sources/1 = SubResource("TileSetScenesCollectionSource_kxc4r")
+sources/3 = SubResource("TileSetScenesCollectionSource_f6b6b")
+sources/4 = SubResource("TileSetScenesCollectionSource_mqqhy")

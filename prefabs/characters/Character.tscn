@@ -22,6 +22,7 @@ position = Vector2(0.48, 0)
 script = ExtResource("1_tjwax")
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+visible = false
 y_sort_enabled = true
 occluder = SubResource("OccluderPolygon2D_2xopk")
 

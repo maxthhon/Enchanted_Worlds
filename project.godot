@@ -19,6 +19,10 @@ boot_splash/image="uid://ci48lyocx032l"
 config/icon="uid://dbywofsoj5r4m"
 boot_splash/minimum_display_time=1500
 
+[autoload]
+
+GameManager="*res://scripts/managers/GameManager.cs"
+
 [display]
 
 window/size/viewport_width=480

@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-public partial class Key : StaticBody2D
+public partial class Lock : StaticBody2D
 {
 	public void _on_area_2d_body_entered(Node body)
 	{
@@ -10,8 +10,16 @@ public partial class Key : StaticBody2D
 			// Убедись, что GameManager.Instance и Profile НЕ null
 			if (GameManager.Instance?.Profile != null)
 			{
-				GameManager.Instance.Profile.AddItem("GoldKey");
-				QueueFree();
+				if (GameManager.Instance.Profile.HasItem("GoldKey"))
+				{
+					GameManager.Instance.Profile.RemoveItem("GoldKey", 1);
+					QueueFree();
+					
+				} else {
+					GD.PrintErr("Нет объекта ключ");
+				}
+				
+				
 			}
 			else
 			{
@@ -20,4 +28,3 @@ public partial class Key : StaticBody2D
 		}
 	}
 }
-//гусь
