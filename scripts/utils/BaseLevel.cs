@@ -3,12 +3,12 @@ using System;
 
 public partial class BaseLevel : Node2D
 {
-	protected AudioStreamPlayer audioPlayer;
 	protected Blackout blackout;
+	public int RequiredCoins { get; set; } = 0; // По умолчанию не требуется монет
+	public string NextLevelPath { get; set; } // По умолчанию не требуется монет
 
 	public override void _Ready()
 	{
-		audioPlayer = GetNodeOrNull<AudioStreamPlayer>("AudioStreamPlayer");
 		blackout = GetNodeOrNull<Blackout>("Blackout");
 
 		if (blackout != null)
@@ -16,16 +16,8 @@ public partial class BaseLevel : Node2D
 			blackout.SetBlackout(false);
 		}
 
-		if (audioPlayer != null)
-		{
-			audioPlayer.Finished += OnAudioFinished;
-			audioPlayer.Play();
-		}
-	}
-
-	protected virtual void OnAudioFinished()
-	{
-		audioPlayer?.Play(); // Цикличное воспроизведение
+		GameManager.Instance.Profile.ClearLocalInventory();
+		
 	}
 
 	public virtual void PauseGame()
@@ -53,6 +45,69 @@ public partial class BaseLevel : Node2D
 		else
 		{
 			GetTree().ChangeSceneToFile(path);
+		}
+	}
+
+	/// <summary>
+	/// Проверяет, достаточно ли монет у игрока для выхода, и завершает уровень.
+	/// </summary>
+	public virtual void TryExitLevel()
+	{
+		var profile = GameManager.Instance.Profile;
+		
+		if (profile != null && profile.HasItem("Coin", RequiredCoins))
+		{
+			GD.Print("Достаточно монет для выхода!");
+			GameManager.Instance.ExitLevel();
+		}
+		else
+		{
+			GD.Print("Недостаточно монет для выхода!");
+			// Выводим весь инвентарь игрока для отладки/информирования
+			if (profile != null)
+			{
+				var items = profile.GetAllItems();
+				foreach (var item in items)
+				{
+					GD.Print($"Инвентарь: {item.Key} x{item.Value}");
+				}
+			}
+			// Мигнуть затемнением экрана для уведомления игрока
+			if (blackout != null)
+			{
+				blackout.Blink();
+			}
+			// Можно добавить дополнительное уведомление игроку
+		}
+	}
+	
+	public virtual void TryToLevel()
+	{
+		var profile = GameManager.Instance.Profile;
+		
+		if (profile != null && profile.HasItem("Coin", RequiredCoins))
+		{
+			GD.Print("Достаточно монет для выхода!");
+			TransitionToLevel(NextLevelPath);
+		}
+		else
+		{
+			GD.Print("Недостаточно монет для выхода!");
+			// Выводим весь инвентарь игрока для отладки/информирования
+			if (profile != null)
+			{
+				var items = profile.GetAllItems();
+				foreach (var item in items)
+				{
+					GD.Print($"Инвентарь: {item.Key} x{item.Value}");
+				}
+			}
+			// Мигнуть затемнением экрана для уведомления игрока
+			if (blackout != null)
+			{
+				blackout.Blink();
+			}
+			// Можно добавить дополнительное уведомление игроку
 		}
 	}
 }

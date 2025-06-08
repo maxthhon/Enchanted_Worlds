@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://sk5yx2dfdfbl"]
+
+[ext_resource type="PackedScene" uid="uid://cyl6i7cx301yb" path="res://scenes/base/BaseLevel.tscn" id="1_agd6r"]
+[ext_resource type="Script" uid="uid://bihpp4n4rwxgs" path="res://scripts/Levels/LevelMap.cs" id="2_75l3a"]
+
+[node name="BaseLevel" instance=ExtResource("1_agd6r")]
+script = ExtResource("2_75l3a")
+
+[node name="TileMap" parent="." index="3"]
+layer_0/tile_data = PackedInt32Array(262148, 4, 131072)

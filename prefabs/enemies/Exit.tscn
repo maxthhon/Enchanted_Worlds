@@ -1,20 +1,23 @@
-[gd_scene load_steps=5 format=3 uid="uid://be55x3karc4s8"]
+[gd_scene load_steps=6 format=3 uid="uid://be55x3karc4s8"]
 
-[ext_resource type="Texture2D" uid="uid://ci48lyocx032l" path="res://logo.png" id="1_url3r"]
 [ext_resource type="Script" uid="uid://dcgd13q4wy3l8" path="res://scripts/utils/Exit.cs" id="2_syvvd"]
+[ext_resource type="Texture2D" uid="uid://bhb0v6ewpk6f1" path="res://assets/textures/TileSet-LibraryNew.aseprite" id="2_url3r"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_syvvd"]
+atlas = ExtResource("2_url3r")
+region = Rect2(64, 0, 32, 32)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_lvx3t"]
-radius = 22.0227
+radius = 13.0384
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_40phs"]
-radius = 19.0263
+radius = 8.0
 
 [node name="Exit" type="StaticBody2D"]
 script = ExtResource("2_syvvd")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.05, 0.05)
-texture = ExtResource("1_url3r")
+texture = SubResource("AtlasTexture_syvvd")
 
 [node name="Area2D" type="Area2D" parent="."]
 
@@ -23,5 +26,6 @@ shape = SubResource("CircleShape2D_lvx3t")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_40phs")
+disabled = true
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

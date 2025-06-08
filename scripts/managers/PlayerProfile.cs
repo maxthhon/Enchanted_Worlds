@@ -95,7 +95,7 @@ public partial class PlayerProfile : Node
 	{
 		return new List<string>(CompletedLevels);
 	}
-	
+
 	/// <summary>
 	/// Возвращает копию словаря всех предметов из выбранного инвентаря.
 	/// Это удобно для отображения в UI или сериализации.
@@ -111,8 +111,23 @@ public partial class PlayerProfile : Node
 	/// </summary>
 	public bool HasItem(string itemId, int count = 1, bool global = false)
 	{
+		if (count <= 0)
+			return true; // 0 предметов всегда "есть"
+
 		var source = global ? GlobalInventory : LocalInventory;
 
-		return source.TryGetValue(itemId, out int currentCount) && currentCount >= count;
+		if (!source.ContainsKey(itemId))
+			return false;
+
+		return source[itemId] >= count;
+	}
+	
+	// <summary>
+	/// Очищает локальный инвентарь игрока.
+	/// </summary>
+	public void ClearLocalInventory()
+	{
+		LocalInventory.Clear();
+		GD.Print("Локальный инвентарь очищен.");
 	}
 }

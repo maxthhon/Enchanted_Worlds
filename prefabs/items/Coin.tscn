@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://c7p8iqcuwyj2d"]
+
+[ext_resource type="Script" uid="uid://bvbr53ysh4r02" path="res://scripts/utils/Coin.cs" id="1_ib16m"]
+[ext_resource type="SpriteFrames" uid="uid://1rt3qbic573c" path="res://assets/textures/coin.aseprite" id="1_xvc2w"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ecard"]
+radius = 14.0357
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_xvmnp"]
+radius = 7.07107
+
+[node name="Coin" type="StaticBody2D"]
+script = ExtResource("1_ib16m")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = ExtResource("1_xvc2w")
+frame = 4
+frame_progress = 0.358801
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_ecard")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_xvmnp")
+disabled = true
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

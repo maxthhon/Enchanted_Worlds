@@ -3,6 +3,10 @@ using System;
 
 public partial class Character : CharacterBody2D
 {
+	[Export] public int health = 100;
+	[Export] public int maxHealth = 100;
+
+	public bool isInterupted = false;
 	[Export] public float maxSpeed = 50;
 	[Export] public float acceleration = 400;
 	[Export] public float deceleration = 600;
@@ -39,11 +43,22 @@ public partial class Character : CharacterBody2D
 	{
 		inputDirection = Input.GetVector("left", "right", "up", "down").Normalized();
 
+		if (Input.IsActionJustPressed("interaction"))
+		{
+			isInterupted = true;
+			//GD.Print("interrupt" + isInterupted);
+		}
+		else
+		{
+			isInterupted = false;
+			//GD.Print("interrupt" + isInterupted);
+		}
+
 		if (inputDirection != Vector2.Zero)
 		{
 			float currentMaxSpeed = Input.IsActionPressed("shift") ? maxSpeed * 1.7f : maxSpeed;
 			float speedScale = Input.IsActionPressed("shift") ? 2.0f : 1.5f;
-	 
+
 			Velocity += inputDirection * acceleration * delta;
 			Velocity = Velocity.LimitLength(currentMaxSpeed);
 			animation.SpeedScale = speedScale;
@@ -56,10 +71,10 @@ public partial class Character : CharacterBody2D
 			animation.Play("stage");
 		}
 
-		if (Input.IsActionJustPressed("ui_select"))
-		{
-			Attack();
-		}
+		//if (Input.IsActionJustPressed("ui_select"))
+		//{
+			//Attack();
+		//}
 	}
 
 	private void UpdateAnimation(Vector2 direction)

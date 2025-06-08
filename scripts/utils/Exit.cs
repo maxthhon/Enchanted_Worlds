@@ -7,7 +7,12 @@ public partial class Exit : StaticBody2D
 	{
 		if (body is Character)
 		{
-			GameManager.Instance.ExitLevel();
+			// Получаем уровень и вызываем TryExitLevel
+			var level = GetTree().CurrentScene as BaseLevel;
+			if (level != null)
+				level.TryToLevel();
+			else
+				GD.PrintErr("Не удалось найти уровень для проверки выхода!");
 		}
 	}
 }

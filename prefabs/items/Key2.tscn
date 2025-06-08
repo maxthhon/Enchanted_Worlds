@@ -1,0 +1,34 @@
+[gd_scene load_steps=6 format=3 uid="uid://cfj76wi7vtdfl"]
+
+[ext_resource type="Script" uid="uid://ktxj1lskbqwb" path="res://scripts/utils/Key2.cs" id="1_jllto"]
+[ext_resource type="Texture2D" uid="uid://dnou44s8pt4a" path="res://assets/textures/spot.png" id="2_v013p"]
+[ext_resource type="Texture2D" uid="uid://badtusks6vd7p" path="res://assets/textures/key.aseprite" id="3_ba8qo"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7w53r"]
+size = Vector2(30, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yicfl"]
+size = Vector2(34, 20)
+
+[node name="Key2" type="StaticBody2D"]
+script = ExtResource("1_jllto")
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+energy = 0.3
+texture = ExtResource("2_v013p")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(0.73, 0.84, 8.47, 1)
+z_index = 5
+texture = ExtResource("3_ba8qo")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionArea" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_7w53r")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_yicfl")
+disabled = true
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

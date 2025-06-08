@@ -14,6 +14,9 @@ public static class ItemDatabase
 	public static readonly Dictionary<string, ItemData> Items = new Dictionary<string, ItemData>
 	{
 		{ "GoldKey", new ItemData("GoldKey", "Золотой Ключ", "Окрывает золотой замок.", ItemType.Quest) },
+		{ "SilverKey", new ItemData("SilverKey", "Серебряный Ключ", "Окрывает серебрянный замок.", ItemType.Quest) },
+		{ "BronzeKey", new ItemData("BronzeKey", "Бронзовый Ключ", "Окрывает бронзовый замок.", ItemType.Quest) },
+		{ "Coin", new ItemData("Coin", "Золотая монетка", "Блестит очень красиво.", ItemType.Misc) },
 		// В дальнейшем легко расширять этот список, добавляя новые предметы.
 	};
 

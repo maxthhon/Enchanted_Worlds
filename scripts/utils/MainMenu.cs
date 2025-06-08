@@ -14,8 +14,11 @@ public partial class MainMenu : BaseMenu
 		book = GetNode<Sprite2D>("Book");
 		label = GetNode<Label>("GameName");
 		tween = GetTree().CreateTween();
+		
+		
 
 		LaunchBookToCenter();
+		GetNode<MusicController>("/root/Music").PlayTrackByName("LibraryTheme_Begin");
 	}
 
 	private void LaunchBookToCenter()
@@ -56,10 +59,10 @@ public partial class MainMenu : BaseMenu
 				GetTree().ChangeSceneToFile("res://scenes/main/SettingsMenu.tscn");
 				break;
 			case 3: // выход
-				GetTree().Quit();
+				GetTree().ChangeSceneToFile("res://scenes/world/LevelMap.tscn");
 				break;
 			case 4: // сохранения
-				GetTree().ChangeSceneToFile("");
+				GetTree().Quit();
 				break;
 		}
 	}
@@ -76,11 +79,11 @@ public partial class MainMenu : BaseMenu
 
 	private void _on_quit_button_pressed()
 	{
-		SetButtonPressed(3);
+		SetButtonPressed(4);
 	}
 	
-	private void _on_quit_button_4_pressed()
+	private void _on_button_4_pressed()
 	{
-		SetButtonPressed(4);
+		SetButtonPressed(3);
 	}
 }

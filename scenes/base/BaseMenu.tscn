@@ -67,7 +67,3 @@ offset_top = -98.0
 offset_right = 71.0
 offset_bottom = -3.0
 grow_vertical = 2
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-
-[connection signal="finished" from="AudioStreamPlayer" to="." method="_on_audio_stream_player_finished"]
