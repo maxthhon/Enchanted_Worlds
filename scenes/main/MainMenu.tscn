@@ -136,7 +136,7 @@ offset_left = -25.3333
 offset_top = -12.0
 offset_right = 28.6667
 size_flags_horizontal = 4
-text = "chapter 1"
+text = "глава 1"
 label_settings = SubResource("LabelSettings_v3gjy")
 
 [connection signal="pressed" from="Book/VBoxContainer/Button" to="." method="_on_button_pressed"]

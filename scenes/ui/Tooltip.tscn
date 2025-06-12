@@ -1,0 +1,35 @@
+[gd_scene load_steps=3 format=3 uid="uid://cxpu3amhkogu7"]
+
+[ext_resource type="FontFile" uid="uid://5kq0n7bn37pf" path="res://assets/fonts/pixelcyr_normal.ttf" id="1_aloxc"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_6dc22"]
+font = ExtResource("1_aloxc")
+font_size = 10
+
+[node name="Tooltip" type="CanvasLayer"]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -154.0
+offset_top = -38.0
+offset_right = 154.0
+offset_bottom = -3.0
+grow_horizontal = 2
+grow_vertical = 0
+color = Color(0, 0, 0, 1)
+
+[node name="Label" type="Label" parent="ColorRect"]
+layout_mode = 2
+offset_left = 2.0
+offset_top = 2.0
+offset_right = 306.0
+offset_bottom = 33.0
+label_settings = SubResource("LabelSettings_6dc22")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3

@@ -1,20 +1,21 @@
-[gd_scene load_steps=5 format=3 uid="uid://cdoo253c8voc6"]
+[gd_scene load_steps=6 format=3 uid="uid://cdoo253c8voc6"]
 
 [ext_resource type="SpriteFrames" uid="uid://ck16k6vy5uj1a" path="res://assets/textures/MapExit.aseprite" id="1_2fu1l"]
 [ext_resource type="Script" uid="uid://d3fkd1nraqm28" path="res://scripts/utils/MapExit.cs" id="1_vcbml"]
+[ext_resource type="Texture2D" uid="uid://b36igcq0wgbp2" path="res://assets/textures/light.png" id="3_cp3lm"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_cp3lm"]
-radius = 19.0
+radius = 8.06226
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_voamq"]
 size = Vector2(33, 32)
 
 [node name="MapLevel" type="StaticBody2D"]
+y_sort_enabled = true
 script = ExtResource("1_vcbml")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = ExtResource("1_2fu1l")
-frame = 1
 
 [node name="Area2D" type="Area2D" parent="."]
 
@@ -24,4 +25,14 @@ shape = SubResource("CircleShape2D_cp3lm")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_voamq")
 
+[node name="LightArea" type="PointLight2D" parent="."]
+texture_filter = 1
+scale = Vector2(2.5, 2.5)
+color = Color(0.976648, 0.847256, 0.674143, 1)
+energy = 0.84
+shadow_enabled = true
+texture = ExtResource("3_cp3lm")
+texture_scale = 0.05
+
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

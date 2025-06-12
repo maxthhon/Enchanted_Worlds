@@ -9,6 +9,7 @@ public partial class BaseMenu : Control
 
 	public override void _Ready()
 	{
+		GetTree().Paused = false;
 		audioPlayer = GetNode<AudioStreamPlayer>("AudioStreamPlayer");
 		blackout = GetNode<Blackout>("Blackout");
 

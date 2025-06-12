@@ -1,0 +1,35 @@
+[gd_scene load_steps=6 format=3 uid="uid://cqe5aok86vs6j"]
+
+[ext_resource type="Script" uid="uid://7v0g8yo06kia" path="res://scripts/utils/TooltipPoint.cs" id="1_6w5w3"]
+[ext_resource type="SpriteFrames" uid="uid://bcfvusmrji18m" path="res://assets/textures/que.aseprite" id="2_g4b4q"]
+[ext_resource type="Texture2D" uid="uid://b36igcq0wgbp2" path="res://assets/textures/light.png" id="3_g4b4q"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_6w5w3"]
+radius = 8.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_g4b4q"]
+radius = 6.08276
+
+[node name="TooltipPoint" type="StaticBody2D"]
+y_sort_enabled = true
+script = ExtResource("1_6w5w3")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = ExtResource("2_g4b4q")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_6w5w3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_g4b4q")
+disabled = true
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+color = Color(0.456126, 0.293555, 0.90279, 1)
+texture = ExtResource("3_g4b4q")
+texture_scale = 0.03
+
+[connection signal="body_entered" from="Area2D" to="." method="OnBodyEntered"]
+[connection signal="body_exited" from="Area2D" to="." method="OnBodyExited"]

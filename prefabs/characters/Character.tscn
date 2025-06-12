@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://bv18l1ikjwrkq"]
+[gd_scene load_steps=10 format=3 uid="uid://bv18l1ikjwrkq"]
 
 [ext_resource type="Script" uid="uid://c8xx8uu8655fn" path="res://scripts/characters/Character.cs" id="1_tjwax"]
 [ext_resource type="Texture2D" uid="uid://b36igcq0wgbp2" path="res://assets/textures/light.png" id="2_i3ly3"]
 [ext_resource type="Texture2D" uid="uid://b271plpxn4unb" path="res://assets/textures/MediumShadow.png" id="2_r3fav"]
 [ext_resource type="SpriteFrames" uid="uid://cmtvit15ooi85" path="res://assets/textures/fox.aseprite" id="3_2fbju"]
 [ext_resource type="Script" uid="uid://dn2fu2ey2vha2" path="res://scripts/characters/CharAnimation.cs" id="4_kayir"]
+[ext_resource type="PackedScene" uid="uid://cxpu3amhkogu7" path="res://scenes/ui/Tooltip.tscn" id="6_s2gw3"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_2xopk"]
 polygon = PackedVector2Array(-7.48, 20, -8.48, 26, 8.52, 26, 7.52, 20)
@@ -19,7 +20,7 @@ height = 24.0
 
 [node name="Character" type="CharacterBody2D"]
 y_sort_enabled = true
-position = Vector2(0.48, 0)
+position = Vector2(0.48, -21.13)
 script = ExtResource("1_tjwax")
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
@@ -35,13 +36,15 @@ occluder = SubResource("OccluderPolygon2D_2xopk")
 [node name="CharCamera" type="Camera2D" parent="."]
 
 [node name="CharShade" type="Sprite2D" parent="."]
+visible = false
+y_sort_enabled = true
 texture_filter = 1
 position = Vector2(-0.56, 22.14)
 scale = Vector2(1.1875, 0.8)
 texture = ExtResource("2_r3fav")
 
 [node name="CharAnimation" type="AnimatedSprite2D" parent="."]
-z_index = 20
+y_sort_enabled = true
 texture_filter = 1
 sprite_frames = ExtResource("3_2fbju")
 animation = &"stage"
@@ -62,6 +65,8 @@ shape = SubResource("CapsuleShape2D_2fbju")
 
 [node name="headdown" type="Timer" parent="."]
 wait_time = 0.338
+
+[node name="Tooltip" parent="." instance=ExtResource("6_s2gw3")]
 
 [connection signal="input_event" from="." to="." method="_on_input_event"]
 [connection signal="body_entered" from="PlayerHitBox" to="." method="_on_player_hit_box_body_entered"]

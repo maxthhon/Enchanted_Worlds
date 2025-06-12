@@ -1,13 +1,14 @@
-[gd_scene load_steps=5 format=3 uid="uid://c7p8iqcuwyj2d"]
+[gd_scene load_steps=6 format=3 uid="uid://c7p8iqcuwyj2d"]
 
 [ext_resource type="Script" uid="uid://bvbr53ysh4r02" path="res://scripts/utils/Coin.cs" id="1_ib16m"]
 [ext_resource type="SpriteFrames" uid="uid://1rt3qbic573c" path="res://assets/textures/coin.aseprite" id="1_xvc2w"]
+[ext_resource type="Texture2D" uid="uid://dnou44s8pt4a" path="res://assets/textures/spot.png" id="3_ecard"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ecard"]
-radius = 14.0357
+radius = 6.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_xvmnp"]
-radius = 7.07107
+radius = 4.0
 
 [node name="Coin" type="StaticBody2D"]
 script = ExtResource("1_ib16m")
@@ -25,5 +26,10 @@ shape = SubResource("CircleShape2D_ecard")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_xvmnp")
 disabled = true
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+energy = 0.31
+texture = ExtResource("3_ecard")
+texture_scale = 0.3
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

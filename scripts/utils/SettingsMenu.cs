@@ -40,12 +40,6 @@ public partial class SettingsMenu : BaseMenu
 			case 1:
 				GetTree().ChangeSceneToFile("res://scenes/main/MainMenu.tscn");
 				break;
-			case 2:
-				GetTree().ChangeSceneToFile("res://scenes/main/SettingsMenu.tscn");
-				break;
-			case 3:
-				
-				break;
 		}
 	}
 
@@ -56,7 +50,8 @@ public partial class SettingsMenu : BaseMenu
 
 	private void _on_button_2_pressed()
 	{
-		SetButtonPressed(2);
+		GameManager.Instance.ResetProfile();
+		SetButtonPressed(1);
 	}
 
 	private void _on_quit_button_pressed()

@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://dr68mg2h6m161"]
+
+[ext_resource type="Script" uid="uid://j1wf54bl4otj" path="res://scripts/utils/DangerTile.cs" id="1_am51k"]
+[ext_resource type="SpriteFrames" uid="uid://bedv84k6ea7hp" path="res://assets/textures/DangerTile.aseprite" id="2_hmr3h"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cxs67"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fo5vp"]
+
+[node name="DangerTile" type="StaticBody2D"]
+z_index = -1
+script = ExtResource("1_am51k")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = ExtResource("2_hmr3h")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+scale = Vector2(1.5, 1.5)
+shape = SubResource("RectangleShape2D_cxs67")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(1.6, 1.6)
+shape = SubResource("RectangleShape2D_fo5vp")
+disabled = true
+debug_color = Color(0.996951, 0, 0.176392, 0.42)
+
+[connection signal="frame_changed" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_frame_changed"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

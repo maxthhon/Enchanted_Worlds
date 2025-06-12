@@ -121,6 +121,12 @@ public partial class MusicController : Node
 	{
 		if (_trackMap.TryGetValue(name, out var stream))
 		{
+			// Проверяем, играет ли уже этот трек
+			if (_musicPlayer.Stream == stream && _musicPlayer.Playing && !_isPaused)
+			{
+				return; // Уже играет — не переключаем
+			}
+
 			_pausedPosition = 0f;
 			_isPaused = false;
 

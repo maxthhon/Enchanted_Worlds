@@ -52,8 +52,33 @@ public partial class MainMenu : BaseMenu
 
 		switch (buttonPressed)
 		{
-			case 1: // начать
-				GetTree().ChangeSceneToFile("res://scenes/world/TestLevel.tscn");
+			case 1: // продолжить
+				var profile = GameManager.Instance.Profile;
+				var completed = profile.GetCompletedLevels();
+				string levelId;
+				int levelIntId;
+				GD.Print(completed);
+				try
+				{
+					if (completed.Count > 0)
+					{
+						levelId = completed[completed.Count - 1];
+						levelIntId = levelId.ToInt() + 1;
+					}
+					else
+					{
+						GD.PrintErr("Уровень по умолчанию 1");
+						levelIntId = 1;
+					}
+				}
+				catch (Exception ex)
+				{
+					GD.PrintErr("Ошибка при получении уровня: " + ex.Message);
+					levelIntId = 1;
+				}
+				string scenePath = profile.GetScenePathById(levelIntId);
+				GD.Print(levelIntId, scenePath);
+				GetTree().ChangeSceneToFile(scenePath);
 				break;
 			case 2: // настройки
 				GetTree().ChangeSceneToFile("res://scenes/main/SettingsMenu.tscn");

@@ -9,6 +9,7 @@ public partial class BaseLevel : Node2D
 
 	public override void _Ready()
 	{
+		GetTree().Paused = false;
 		blackout = GetNodeOrNull<Blackout>("Blackout");
 
 		if (blackout != null)
@@ -81,13 +82,14 @@ public partial class BaseLevel : Node2D
 		}
 	}
 	
-	public virtual void TryToLevel()
+	public virtual void TryToLevel(string CurrentLevelId)
 	{
 		var profile = GameManager.Instance.Profile;
-		
+		profile.MarkLevelCompleted(CurrentLevelId);
 		if (profile != null && profile.HasItem("Coin", RequiredCoins))
 		{
 			GD.Print("Достаточно монет для выхода!");
+			GameManager.Instance.OnLevelCompleted();
 			TransitionToLevel(NextLevelPath);
 		}
 		else

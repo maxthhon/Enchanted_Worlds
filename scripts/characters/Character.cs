@@ -14,6 +14,10 @@ public partial class Character : CharacterBody2D
 	private Vector2 inputDirection = Vector2.Zero;
 	private AnimatedSprite2D animation;
 
+	private bool interruptRequested = false;
+	private float interruptCooldown = 0f;
+	private const float InterruptCooldownTime = 0.3f; // Кулдаун в секундах
+
 	public override void _Ready()
 	{
 		animation = GetNode<AnimatedSprite2D>("CharAnimation");
@@ -35,18 +39,31 @@ public partial class Character : CharacterBody2D
 
 	public override void _PhysicsProcess(double delta)
 	{
+		if (interruptCooldown > 0f)
+			interruptCooldown -= (float)delta;
+
 		HandleInput((float)delta);
 		MoveAndSlide();
+
+		//// Сохраняем позицию игрока каждый кадр
+		//try
+		//{
+			//GameManager.Instance.Profile.SavedPlayerPosition = Position;
+		//}
+		//catch (Exception ex)
+		//{
+			//GD.PrintErr($"Ошибка сохранения позиции игрока: {ex.Message}");
+		//}
 	}
 
 	private void HandleInput(float delta)
 	{
 		inputDirection = Input.GetVector("left", "right", "up", "down").Normalized();
 
-		if (Input.IsActionJustPressed("interaction"))
+		if (Input.IsActionJustPressed("interaction") && interruptCooldown <= 0f)
 		{
-			isInterupted = true;
-			//GD.Print("interrupt" + isInterupted);
+			interruptRequested = true;
+			interruptCooldown = InterruptCooldownTime;
 		}
 		else
 		{
@@ -113,5 +130,37 @@ public partial class Character : CharacterBody2D
 	public void _on_player_hit_box_body_exited(Node2D body)
 	{
 		// Реакция на выход из зоны
+	}
+
+	public async void ShowTooltip(string text, float seconds, bool forceShow = false)
+	{
+		GD.Print($"Вопрос посещён {text}");
+		var tooltip = GetNodeOrNull<CanvasLayer>("Tooltip");
+		if (tooltip == null)
+			return;
+
+		var colorRect = tooltip.GetNode<ColorRect>("ColorRect");
+		var label = colorRect.GetNode<Label>("Label");
+		label.Text = text;
+
+		tooltip.Visible = true;
+
+		// Просто показываем и скрываем без плавной анимации
+		colorRect.Modulate = new Color(colorRect.Modulate, 1f);
+
+		await ToSignal(GetTree().CreateTimer(seconds), "timeout");
+
+		colorRect.Modulate = new Color(colorRect.Modulate, 0f);
+		tooltip.Visible = false;
+	}
+
+	public bool TryInterrupt()
+	{
+		if (interruptRequested)
+		{
+			interruptRequested = false;
+			return true;
+		}
+		return false;
 	}
 }

@@ -6,7 +6,7 @@ using System.Collections.Generic;
 /// Класс профиля игрока. Хранит персональные данные: имя, инвентарь, прогресс и т.п.
 /// Добавлены удобные методы управления данными с валидацией и логикой.
 /// </summary>
-public partial class PlayerProfile : Node
+public partial class PlayerProfile
 {
 	public string PlayerName { get; set; } = "Player";
 
@@ -18,6 +18,8 @@ public partial class PlayerProfile : Node
 
 	// Глобальный инвентарь (вещи, которые остаются между уровнями)
 	public Dictionary<string, int> GlobalInventory { get; set; } = new Dictionary<string, int>();
+
+	public Vector2? SavedPlayerPosition { get; set; } = null;
 
 	/// <summary>
 	/// Добавляет предмет в указанный инвентарь.
@@ -66,6 +68,23 @@ public partial class PlayerProfile : Node
 			inventory.Remove(itemId);
 
 		return true;
+	}
+
+	public string GetScenePathById(int levelId)
+	{
+		// Пример сопоставления ID с путём к сцене
+		return levelId switch
+		{
+			1 => "res://scenes/world/Level1.tscn",
+			2 => "res://scenes/world/Level2.tscn",
+			3 => "res://scenes/world/Level3.tscn",
+			4 => "res://scenes/world/Level4.tscn",
+			5 => "res://scenes/world/Level5.tscn",
+			6 => "res://scenes/world/Level6.tscn",
+			7 => "res://scenes/world/Level7.tscn",
+			8 => "res://scenes/world/Level8.tscn",
+			_ => "res://scenes/world/LevelMap.tscn"
+		};
 	}
 
 	/// <summary>
