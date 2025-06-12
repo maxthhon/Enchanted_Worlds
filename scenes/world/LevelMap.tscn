@@ -53,15 +53,19 @@ position = Vector2(849, 336)
 LevelId = 7
 
 [node name="MapLevel8" parent="." index="11" instance=ExtResource("3_enkw0")]
-position = Vector2(848, 240)
+position = Vector2(848, 272)
 LevelId = 8
 
-[node name="MenuControl" parent="." index="12"]
+[node name="MapLevel9" parent="." index="12" instance=ExtResource("3_enkw0")]
+position = Vector2(848, 208)
+LevelId = 9
+
+[node name="MenuControl" parent="." index="13"]
 visible = false
 
-[node name="TooltipPoint" parent="." index="13" instance=ExtResource("4_1yrt8")]
+[node name="TooltipPoint" parent="." index="14" instance=ExtResource("4_1yrt8")]
 position = Vector2(848, 143)
-TooltipText = "Вы прошли игру!"
+TooltipText = "Это лишь начало большого приключения!"
 
-[node name="CoinCounter" parent="." index="14"]
+[node name="CoinCounter" parent="." index="15"]
 visible = false

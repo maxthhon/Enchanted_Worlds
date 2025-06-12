@@ -83,6 +83,7 @@ public partial class PlayerProfile
 			6 => "res://scenes/world/Level6.tscn",
 			7 => "res://scenes/world/Level7.tscn",
 			8 => "res://scenes/world/Level8.tscn",
+			9 => "res://scenes/main/MainMenu.tscn",
 			_ => "res://scenes/world/LevelMap.tscn"
 		};
 	}
