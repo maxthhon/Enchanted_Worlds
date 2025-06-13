@@ -75,15 +75,12 @@ texture = SubResource("AtlasTexture_wayup")
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D" index="1"]
 position = Vector2(-0.603125, 6.64998)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_gnjul")
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D" index="2"]
 position = Vector2(-8.225, 2.34999)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_wayup")
 
 [node name="CollisionShape2D5" type="CollisionShape2D" parent="StaticBody2D" index="3"]
 position = Vector2(6.85, 2.24999)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_wayup")
