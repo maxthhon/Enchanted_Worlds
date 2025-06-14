@@ -53,15 +53,15 @@ TooltipText = "Вы нашли убежище разработчика! Он т�
 
 [node name="TooltipPoint2" parent="." index="10" instance=ExtResource("4_jkrtt")]
 position = Vector2(241, 109)
-TooltipText = "Ближе к концу лабиринта библиотеки, где воздух был пропитан запахом старых книг и пыли, что-то неуловимое, но манящее, начало притягивать к себе."
+TooltipText = "Ближе к концу лабиринта библиотеки, что-то неуловимое, но манящее, начало притягивать к себе."
 
 [node name="TooltipPoint3" parent="." index="11" instance=ExtResource("4_jkrtt")]
 position = Vector2(-113, 880)
-TooltipText = "Это было похоже на тихий шёпот, зов из глубины, который обещал раскрыть древние тайны, скрытые среди бесконечных книжных полок."
+TooltipText = "Это было похоже на тихий шёпот, зов из глубины, который обещал раскрыть древние тайны."
 
 [node name="TooltipPoint4" parent="." index="12" instance=ExtResource("4_jkrtt")]
 position = Vector2(624, 329)
-TooltipText = "Казалось, сам лабиринт дышит, направляя тебя к неизведанному."
+TooltipText = "Казалось, сам лабиринт, направляет к неизведанному."
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." index="13"]
 position = Vector2(252, 1270)
@@ -75,15 +75,12 @@ texture = SubResource("AtlasTexture_wayup")
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D" index="1"]
 position = Vector2(-0.603125, 6.64998)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_gnjul")
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D" index="2"]
 position = Vector2(-8.225, 2.34999)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_wayup")
 
 [node name="CollisionShape2D5" type="CollisionShape2D" parent="StaticBody2D" index="3"]
 position = Vector2(6.85, 2.24999)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_wayup")
