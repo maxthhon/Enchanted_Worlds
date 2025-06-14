@@ -11,7 +11,7 @@ CurrentLevel = 7
 LevelSong = "ForestTheme_OurGlade"
 
 [node name="PlayerSpawner" parent="." index="1"]
-position = Vector2(240, 112)
+position = Vector2(19, 314)
 
 [node name="TileMap" parent="." index="3"]
 layer_0/name = "Items"
